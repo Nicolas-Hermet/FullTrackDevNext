@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import WorflowImg01 from '@/public/images/workflow-01.png';
-import WorflowImg02 from '@/public/images/workflow-02.png';
-import WorflowImg03 from '@/public/images/workflow-03.png';
-import Spotlight from '@/components/spotlight';
+import Image from "next/image";
+import WorflowImg01 from "@/public/images/workflow-01.png";
+import WorflowImg02 from "@/public/images/workflow-02.png";
+import WorflowImg03 from "@/public/images/workflow-03.png";
+import Spotlight from "@/components/spotlight";
 
 export default function Workflows() {
   return (
@@ -16,7 +16,7 @@ export default function Workflows() {
                 Tailored Workflows
               </span>
             </div>
-            <h2 className="animate-title pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
+            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
               Map your product journey
             </h2>
             <p className="text-lg text-indigo-200/65">

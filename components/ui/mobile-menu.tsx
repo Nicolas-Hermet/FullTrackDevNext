@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Transition } from '@headlessui/react';
-import { Link } from '@/i18n/routing';
+import { useState, useRef, useEffect } from "react";
+import { Transition } from "@headlessui/react";
+import Link from "next/link";
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
@@ -22,8 +22,8 @@ export default function MobileMenu() {
         return;
       setMobileNavOpen(false);
     };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
   });
 
   // close the mobile menu if the esc key is pressed
@@ -32,8 +32,8 @@ export default function MobileMenu() {
       if (!mobileNavOpen || keyCode !== 27) return;
       setMobileNavOpen(false);
     };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
   });
 
   return (
@@ -41,7 +41,7 @@ export default function MobileMenu() {
       {/* Hamburger button */}
       <button
         ref={trigger}
-        className={`group inline-flex h-8 w-8 items-center justify-center text-center text-gray-200 transition ${mobileNavOpen && 'active'}`}
+        className={`group inline-flex h-8 w-8 items-center justify-center text-center text-gray-200 transition ${mobileNavOpen && "active"}`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -87,7 +87,7 @@ export default function MobileMenu() {
           className="absolute left-0 top-full z-20 mt-2 w-full rounded-xl bg-gray-900/90 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transform transition ease-out duration-200 data-enter:data-closed:-translate-y-2 data-closed:opacity-0"
         >
           <ul className="p-2 text-sm">
-            {/* <li>
+            <li>
               <Link
                 href="/pricing"
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
@@ -104,7 +104,7 @@ export default function MobileMenu() {
               >
                 About Us
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 href="/blog"
@@ -114,7 +114,7 @@ export default function MobileMenu() {
                 Blog
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 href="/help/frequently-asked-questions"
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
@@ -131,17 +131,17 @@ export default function MobileMenu() {
               >
                 Newsletter
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 href="/contact"
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Contact me
+                Contact
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 href="/404"
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
@@ -149,7 +149,7 @@ export default function MobileMenu() {
               >
                 404
               </Link>
-            </li> */}
+            </li>
           </ul>
         </Transition>
       </div>

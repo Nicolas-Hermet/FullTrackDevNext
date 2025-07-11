@@ -1,3 +1,3 @@
-export async function GET(_request: Request) {
-  return new Response('Welcome on Full Track Dev!');
+export async function GET(request: Request) {
+  return new Response("Hello, Next.js!");
 }

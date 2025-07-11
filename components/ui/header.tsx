@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
-import { Link } from '@/i18n/routing';
-import Logo from './logo';
-import Dropdown from '@/components/dropdown';
-import MobileMenu from './mobile-menu';
-import LanguageSwitcher from '@/components/language-switcher';
+import Link from "next/link";
+import Logo from "./logo";
+import Dropdown from "@/components/dropdown";
+import MobileMenu from "./mobile-menu";
 
 export default function Header() {
   return (
@@ -19,8 +18,8 @@ export default function Header() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             {/* Desktop menu links */}
-            <ul className="flex grow flex-wrap items-center justify-end gap-4 text-sm lg:gap-8">
-              {/* <li>
+            <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
+              <li>
                 <Link
                   href="/pricing"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
@@ -35,7 +34,7 @@ export default function Header() {
                 >
                   About Us
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   href="/blog"
@@ -46,21 +45,15 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/contact"
-                  className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
-                >
-                  Contact me
-                </Link>
-              </li>
-              {/* <li>
-                <Link
                   href="/help/frequently-asked-questions"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
                 >
                   Help Centre
                 </Link>
-              </li> */}
-              {/* <Dropdown title="Resources">
+              </li>
+              {/* 1st level: hover */}
+              <Dropdown title="Resources">
+                {/* 2nd level: hover */}
                 <li>
                   <Link
                     href="/newsletter"
@@ -85,13 +78,12 @@ export default function Header() {
                     404
                   </Link>
                 </li>
-              </Dropdown> */}
-              <LanguageSwitcher />
+              </Dropdown>
             </ul>
           </nav>
 
           {/* Desktop sign in links */}
-          {/* <ul className="flex flex-1 items-center justify-end gap-3">
+          <ul className="flex flex-1 items-center justify-end gap-3">
             <li>
               <Link
                 href="/signin"
@@ -108,7 +100,7 @@ export default function Header() {
                 Register
               </Link>
             </li>
-          </ul> */}
+          </ul>
 
           <MobileMenu />
         </div>

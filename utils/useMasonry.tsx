@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 
 const useMasonry = () => {
   const masonryContainer = useRef<HTMLDivElement | null>(null);
@@ -11,14 +11,6 @@ const useMasonry = () => {
     }
   }, []);
 
-  const elementLeft = (el: HTMLElement) => el.getBoundingClientRect().left;
-
-  const elementTop = (el: HTMLElement) =>
-    el.getBoundingClientRect().top + window.scrollY;
-
-  const elementBottom = (el: HTMLElement) =>
-    el.getBoundingClientRect().bottom + window.scrollY;
-
   useEffect(() => {
     const handleMasonry = () => {
       if (!items || items.length < 1) return;
@@ -27,7 +19,7 @@ const useMasonry = () => {
         gapSize = parseInt(
           window
             .getComputedStyle(masonryContainer.current)
-            .getPropertyValue('grid-row-gap')
+            .getPropertyValue("grid-row-gap"),
         );
       }
       items.forEach((el) => {
@@ -35,13 +27,13 @@ const useMasonry = () => {
         let previous = el.previousSibling;
         while (previous) {
           if (previous.nodeType === 1) {
-            el.style.marginTop = '0';
+            el.style.marginTop = "0";
             if (
               previous instanceof HTMLElement &&
               elementLeft(previous) === elementLeft(el)
             ) {
               el.style.marginTop =
-                -(elementTop(el) - elementBottom(previous) - gapSize) + 'px';
+                -(elementTop(el) - elementBottom(previous) - gapSize) + "px";
               break;
             }
           }
@@ -51,11 +43,23 @@ const useMasonry = () => {
     };
 
     handleMasonry();
-    window.addEventListener('resize', handleMasonry);
+    window.addEventListener("resize", handleMasonry);
     return () => {
-      window.removeEventListener('resize', handleMasonry);
+      window.removeEventListener("resize", handleMasonry);
     };
   }, [items]);
+
+  const elementLeft = (el: HTMLElement) => {
+    return el.getBoundingClientRect().left;
+  };
+
+  const elementTop = (el: HTMLElement) => {
+    return el.getBoundingClientRect().top + window.scrollY;
+  };
+
+  const elementBottom = (el: HTMLElement) => {
+    return el.getBoundingClientRect().bottom + window.scrollY;
+  };
 
   return masonryContainer;
 };

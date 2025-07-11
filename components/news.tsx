@@ -1,17 +1,15 @@
-import { getBlogPosts } from '@/components/mdx/utils';
-import PostItem from '@/app/[locale]/(default)/blog/post-item';
+import { getBlogPosts } from "@/components/mdx/utils";
+import PostItem from "../app/(default)/blog/post-item";
 
-type NewsProps = {
-  locale?: string;
-};
-
-export default function News({ locale = 'fr' }: NewsProps) {
-  const allBlogs = getBlogPosts(locale);
+export default function News() {
+  const allBlogs = getBlogPosts();
 
   // Sort posts by date
-  allBlogs.sort((a, b) =>
-    new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt) ? -1 : 1
-  );
+  allBlogs.sort((a, b) => {
+    return new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
+      ? -1
+      : 1;
+  });
 
   const posts = allBlogs.slice(0, 3);
 
