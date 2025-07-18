@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function PricingTable() {
   const [annual, setAnnual] = useState<boolean>(true);
@@ -38,7 +38,7 @@ export default function PricingTable() {
             <div className="mb-1.5 flex items-baseline font-nacelle">
               <span className="text-2xl text-indigo-200/65">$</span>
               <span className="text-4xl font-semibold tabular-nums text-gray-200">
-                {annual ? "7" : "9"}
+                {annual ? '7' : '9'}
               </span>
             </div>
             <div className="mb-4 grow text-xs text-indigo-200/65">
@@ -106,7 +106,7 @@ export default function PricingTable() {
             <div className="mb-1.5 flex items-baseline font-nacelle">
               <span className="text-2xl text-indigo-200/65">$</span>
               <span className="text-4xl font-semibold tabular-nums text-gray-200">
-                {annual ? "27" : "29"}
+                {annual ? '27' : '29'}
               </span>
             </div>
             <div className="mb-4 grow text-xs text-indigo-200/65">
@@ -177,7 +177,7 @@ export default function PricingTable() {
             <div className="mb-1.5 flex items-baseline font-nacelle">
               <span className="text-2xl text-indigo-200/65">$</span>
               <span className="text-4xl font-semibold tabular-nums text-gray-200">
-                {annual ? "47" : "49"}
+                {annual ? '47' : '49'}
               </span>
             </div>
             <div className="mb-4 grow text-xs text-indigo-200/65">
@@ -245,7 +245,7 @@ export default function PricingTable() {
             <div className="mb-1.5 flex items-baseline font-nacelle">
               <span className="text-2xl text-indigo-200/65">$</span>
               <span className="text-4xl font-semibold tabular-nums text-gray-200">
-                {annual ? "87" : "89"}
+                {annual ? '87' : '89'}
               </span>
             </div>
             <div className="mb-4 grow text-xs text-indigo-200/65">

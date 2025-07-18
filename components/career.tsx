@@ -1,28 +1,28 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import BlurredShapeImg from "@/public/images/blurred-shape.svg";
+import BlurredShapeImg from '@/public/images/blurred-shape.svg';
 
 const position = [
   {
-    title: "Lead Product Designer",
+    title: 'Lead Product Designer',
     description:
       "You'll be joing the Experience Design Team as a Lead Product Designer. You'll interface daily with developers - encouraging and advancing best practices in software.",
-    location: "Anywhere (EU timezone)",
-    salary: "$100K - $120K",
+    location: 'Anywhere (EU timezone)',
+    salary: '$100K - $120K',
   },
   {
-    title: "Principal Software Engineer",
+    title: 'Principal Software Engineer',
     description:
       "You'll be joing the Experience Design Team as a Lead Product Designer. You'll interface daily with developers - encouraging and advancing best practices in software.",
-    location: "Anywhere (EU timezone)",
-    salary: "$140K - $180K",
+    location: 'Anywhere (EU timezone)',
+    salary: '$140K - $180K',
   },
   {
-    title: "Marketing Operations Manager",
+    title: 'Marketing Operations Manager',
     description:
       "You'll be joing the Experience Design Team as a Lead Product Designer. You'll interface daily with developers - encouraging and advancing best practices in software.",
-    location: "Anywhere (EU timezone)",
-    salary: "$70K - $120K",
+    location: 'Anywhere (EU timezone)',
+    salary: '$70K - $120K',
   },
 ];
 
@@ -50,7 +50,7 @@ export default function Career() {
             </h3>
             {/* Job list */}
             <div className="-my-6 divide-y">
-              {position.map((position, index) => (
+              {position.map((_position, index) => (
                 <div
                   key={index}
                   className="py-6 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-400/.25),transparent)1]"
@@ -62,11 +62,11 @@ export default function Career() {
                           className="flex items-center justify-between font-nacelle text-lg font-semibold text-gray-200 transition before:absolute before:inset-0 hover:text-indigo-500"
                           href="#0"
                         >
-                          {position.title}
+                          {_position.title}
                         </a>
                       </div>
                       <div className="mb-4 text-[1rem] text-indigo-200/65">
-                        {position.description}
+                        {_position.description}
                       </div>
                       <div className="flex flex-wrap items-center text-sm text-indigo-200/65">
                         <div className="inline-flex items-center">
@@ -82,7 +82,7 @@ export default function Career() {
                               fillRule="evenodd"
                             />
                           </svg>
-                          <span>{position.location}</span>
+                          <span>{_position.location}</span>
                         </div>
                         <span className="mx-3 text-gray-700"> - </span>
                         <div className="inline-flex items-center">
@@ -98,7 +98,7 @@ export default function Career() {
                               fillRule="evenodd"
                             />
                           </svg>
-                          <span>{position.salary}</span>
+                          <span>{_position.salary}</span>
                         </div>
                       </div>
                     </div>

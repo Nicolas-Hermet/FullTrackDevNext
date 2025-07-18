@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   createContext,
@@ -6,7 +6,7 @@ import {
   Dispatch,
   SetStateAction,
   useState,
-} from "react";
+} from 'react';
 
 type ContextProps = {
   category: string;
@@ -14,8 +14,8 @@ type ContextProps = {
 };
 
 const CategoryContext = createContext<ContextProps>({
-  category: "",
-  setCategory: (): string => "",
+  category: '',
+  setCategory: (): string => '',
 });
 
 export default function CategoryProvider({
@@ -23,7 +23,7 @@ export default function CategoryProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [category, setCategory] = useState<string>("All");
+  const [category, setCategory] = useState<string>('All');
 
   return (
     <CategoryContext.Provider value={{ category, setCategory }}>

@@ -1,26 +1,24 @@
-import { getBlogPosts } from "@/components/mdx/utils";
-import CategoryProvider from "./category-provider";
-import PageIllustration from "@/components/page-illustration";
-import BlogFilters from "./filters";
-import PostItem from "@/app/(default)/blog/post-item";
+import { getBlogPosts } from '@/components/mdx/utils';
+import CategoryProvider from './category-provider';
+import PageIllustration from '@/components/page-illustration';
+import BlogFilters from './filters';
+import PostItem from '@/app/(default)/blog/post-item';
 
 export const metadata = {
-  title: "Blog - Open PRO",
-  description: "Page description",
+  title: 'Blog - Open PRO',
+  description: 'Page description',
 };
 
-import Cta from "@/components/cta";
-import Pagination from "./pagination";
+import Cta from '@/components/cta';
+import Pagination from './pagination';
 
 export default function Blog() {
   const allBlogs = getBlogPosts();
 
   // Sort posts by date
-  allBlogs.sort((a, b) => {
-    return new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-      ? -1
-      : 1;
-  });
+  allBlogs.sort((a, b) =>
+    new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt) ? -1 : 1
+  );
 
   return (
     <>
