@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-require-imports */
+
 const withMDX = require('@next/mdx')();
 
 /** @type {import('next').NextConfig} */
@@ -8,3 +10,4 @@ const nextConfig = {
 };
 
 module.exports = withMDX(nextConfig);
+/* eslint-enable  @typescript-eslint/no-require-imports */
