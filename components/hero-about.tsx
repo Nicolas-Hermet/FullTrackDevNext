@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import TeamImg01 from "@/public/images/team-mosaic-01.jpg";
-import TeamImg02 from "@/public/images/team-mosaic-02.jpg";
-import TeamImg03 from "@/public/images/team-mosaic-03.jpg";
-import TeamImg04 from "@/public/images/team-mosaic-04.jpg";
+import TeamImg01 from '@/public/images/team-mosaic-01.jpg';
+import TeamImg02 from '@/public/images/team-mosaic-02.jpg';
+import TeamImg03 from '@/public/images/team-mosaic-03.jpg';
+import TeamImg04 from '@/public/images/team-mosaic-04.jpg';
 
 export default function HeroAbout() {
   return (
@@ -27,7 +27,7 @@ export default function HeroAbout() {
             <div className="relative aspect-4/3 w-full">
               <figure
                 className="absolute h-auto"
-                style={{ top: "45%", width: "41.67%", maxWidth: 320 }}
+                style={{ top: '45%', width: '41.67%', maxWidth: 320 }}
                 data-aos="fade-right"
               >
                 <div className="relative -rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900">
@@ -42,7 +42,7 @@ export default function HeroAbout() {
               </figure>
               <figure
                 className="relative mx-auto"
-                style={{ width: "78.13%", maxWidth: 600 }}
+                style={{ width: '78.13%', maxWidth: 600 }}
                 data-aos="fade-down"
                 data-aos-delay={100}
               >
@@ -59,9 +59,9 @@ export default function HeroAbout() {
               <figure
                 className="absolute h-auto"
                 style={{
-                  top: "8.5%",
+                  top: '8.5%',
                   right: 0,
-                  width: "32.56%",
+                  width: '32.56%',
                   maxWidth: 250,
                 }}
                 data-aos="fade-left"
@@ -81,8 +81,8 @@ export default function HeroAbout() {
                 className="absolute h-auto"
                 style={{
                   bottom: 0,
-                  right: "20%",
-                  width: "25.53%",
+                  right: '20%',
+                  width: '25.53%',
                   maxWidth: 196,
                 }}
                 data-aos="fade-up"

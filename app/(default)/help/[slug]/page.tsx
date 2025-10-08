@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { getHelpPages } from "@/components/mdx/utils";
-import { notFound } from "next/navigation";
-import PageIllustration from "@/components/page-illustration";
-import Sidebar from "./help-sidebar";
-import FooterSeparator from "@/components/footer-separator";
-import { CustomMDX } from "@/components/mdx/mdx";
+import type { Metadata } from 'next';
+import { getHelpPages } from '@/components/mdx/utils';
+import { notFound } from 'next/navigation';
+import PageIllustration from '@/components/page-illustration';
+import Sidebar from './help-sidebar';
+import FooterSeparator from '@/components/footer-separator';
+import { CustomMDX } from '@/components/mdx/mdx';
 
 export async function generateStaticParams() {
   const allHelps = getHelpPages();
@@ -14,11 +14,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
   const params = await props.params;
   const help = getHelpPages().find((post) => post.slug === params.slug);
 
@@ -34,13 +32,11 @@ export async function generateMetadata(
   };
 }
 
-export default async function SingleHelp(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function SingleHelp(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
-  const help = getHelpPages().find((help) => help.slug === params.slug);
+  const help = getHelpPages().find((_help) => _help.slug === params.slug);
 
   if (!help) notFound();
 

@@ -1,10 +1,10 @@
 export const metadata = {
-  title: "Contact us - Open PRO",
-  description: "Page description",
+  title: 'Contact us - Open PRO',
+  description: 'Page description',
 };
 
-import PageIllustration from "@/components/page-illustration";
-import FooterSeparator from "@/components/footer-separator";
+import PageIllustration from '@/components/page-illustration';
+import FooterSeparator from '@/components/footer-separator';
 
 export default function Contact() {
   return (
@@ -83,9 +83,9 @@ export default function Contact() {
                     <select
                       id="country"
                       className="form-select w-full text-gray-200"
-                      defaultValue={"default"}
+                      defaultValue={'default'}
                     >
-                      <option value={"default"} disabled hidden>
+                      <option value={'default'} disabled hidden>
                         Select a country
                       </option>
                       <option>United States</option>
@@ -105,9 +105,9 @@ export default function Contact() {
                     <select
                       id="topic"
                       className="form-select w-full text-gray-200"
-                      defaultValue={"default"}
+                      defaultValue={'default'}
                     >
-                      <option value={"default"} disabled hidden>
+                      <option value={'default'} disabled hidden>
                         Select a topic
                       </option>
                       <option>General</option>
@@ -149,17 +149,17 @@ export default function Contact() {
                     rows={5}
                     className="form-textarea w-full text-gray-200"
                     placeholder="Include as much details as you can"
-                    defaultValue={""}
+                    defaultValue={''}
                   />
                 </div>
               </div>
               <div className="mt-8 flex w-full flex-col justify-between gap-5 md:flex-row md:items-center">
                 <p className="text-sm text-indigo-200/65">
-                  By continuing, you agree to our{" "}
+                  By continuing, you agree to our{' '}
                   <a className="underline hover:no-underline" href="#0">
                     Terms of Use
-                  </a>{" "}
-                  and{" "}
+                  </a>{' '}
+                  and{' '}
                   <a className="underline hover:no-underline" href="#0">
                     Privacy policy
                   </a>

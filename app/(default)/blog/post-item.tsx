@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { useCategoryProvider } from "./category-provider";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useCategoryProvider } from './category-provider';
 
 export default function PostItem({ ...props }) {
   const { category } = useCategoryProvider();
-  const isHidden = category !== "All" && category !== props.metadata.category;
+  const isHidden = category !== 'All' && category !== props.metadata.category;
 
   return (
     <article
-      className={`flex h-full flex-col transition-opacity ${isHidden ? "pointer-events-none opacity-15" : ""}`}
+      className={`flex h-full flex-col transition-opacity ${isHidden ? 'pointer-events-none opacity-15' : ''}`}
     >
       <header>
         <Link

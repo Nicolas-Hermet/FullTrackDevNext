@@ -1,35 +1,35 @@
-"use client";
+'use client';
 
-import { useState, Fragment } from "react";
-import Image from "next/image";
-import { TabGroup, Tab, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { Transition } from "@headlessui/react";
-import CarouselImg01 from "@/public/images/carousel-01.png";
-import CarouselImg02 from "@/public/images/carousel-02.png";
-import CarouselImg03 from "@/public/images/carousel-03.png";
-import SmallTestimonialImg from "@/public/images/small-testimonial.jpg";
+import { useState, Fragment } from 'react';
+import Image from 'next/image';
+import { TabGroup, Tab, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { Transition } from '@headlessui/react';
+import CarouselImg01 from '@/public/images/carousel-01.png';
+import CarouselImg02 from '@/public/images/carousel-02.png';
+import CarouselImg03 from '@/public/images/carousel-03.png';
+import SmallTestimonialImg from '@/public/images/small-testimonial.jpg';
 
 const tabs = [
   {
-    title: "Strategic Sync",
+    title: 'Strategic Sync',
     description:
-      "Remove corners from the avatars and transform the way your team work.",
+      'Remove corners from the avatars and transform the way your team work.',
     img: CarouselImg01,
-    imgAlt: "Carousel image 01",
+    imgAlt: 'Carousel image 01',
   },
   {
-    title: "Feedback Loop",
+    title: 'Feedback Loop',
     description:
-      "Best-in-class design practices to keep your work safe and secure.",
+      'Best-in-class design practices to keep your work safe and secure.',
     img: CarouselImg02,
-    imgAlt: "Carousel image 02",
+    imgAlt: 'Carousel image 02',
   },
   {
-    title: "Enterprise-Ready",
+    title: 'Enterprise-Ready',
     description:
-      "Built for teams of all sizes. From early-stage startups to global enterprises.",
+      'Built for teams of all sizes. From early-stage startups to global enterprises.',
     img: CarouselImg03,
-    imgAlt: "Carousel image 03",
+    imgAlt: 'Carousel image 03',
   },
 ];
 
@@ -66,10 +66,10 @@ export default function SplitCarousel() {
                     {tabs.map((tab, index) => (
                       <Tab key={index} as={Fragment}>
                         <button
-                          className={`-mx-2 flex gap-2 p-2 text-left transition-opacity focus-visible:outline-hidden ui-focus-visible:outline-none ui-focus-visible:ring ui-focus-visible:ring-indigo-300 ${selectedTab !== index ? "opacity-50 hover:opacity-70" : ""}}`}
+                          className={`-mx-2 flex gap-2 p-2 text-left transition-opacity focus-visible:outline-hidden ui-focus-visible:outline-none ui-focus-visible:ring ui-focus-visible:ring-indigo-300 ${selectedTab !== index ? 'opacity-50 hover:opacity-70' : ''}}`}
                         >
                           <svg
-                            className={`shrink-0 ${selectedTab !== index ? "fill-gray-600" : "fill-indigo-500"}`}
+                            className={`shrink-0 ${selectedTab !== index ? 'fill-gray-600' : 'fill-indigo-500'}`}
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"

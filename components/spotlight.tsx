@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useRef, useState, useEffect } from "react";
-import useMousePosition from "@/utils/useMousePosition";
+import React, { useRef, useState, useEffect } from 'react';
+import useMousePosition from '@/utils/useMousePosition';
 
 type SpotlightProps = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type SpotlightProps = {
 
 export default function Spotlight({
   children,
-  className = "",
+  className = '',
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMousePosition();
@@ -19,26 +19,12 @@ export default function Spotlight({
   const [boxes, setBoxes] = useState<Array<HTMLElement>>([]);
 
   useEffect(() => {
-    containerRef.current &&
+    if (containerRef.current) {
       setBoxes(
-        Array.from(containerRef.current.children).map(
-          (el) => el as HTMLElement,
-        ),
+        Array.from(containerRef.current.children).map((el) => el as HTMLElement)
       );
+    }
   }, []);
-
-  useEffect(() => {
-    initContainer();
-    window.addEventListener("resize", initContainer);
-
-    return () => {
-      window.removeEventListener("resize", initContainer);
-    };
-  }, [boxes]);
-
-  useEffect(() => {
-    onMouseMove();
-  }, [mousePosition]);
 
   const initContainer = () => {
     if (containerRef.current) {
@@ -46,6 +32,15 @@ export default function Spotlight({
       containerSize.current.h = containerRef.current.offsetHeight;
     }
   };
+
+  useEffect(() => {
+    initContainer();
+    window.addEventListener('resize', initContainer);
+
+    return () => {
+      window.removeEventListener('resize', initContainer);
+    };
+  }, [boxes]);
 
   const onMouseMove = () => {
     if (containerRef.current) {
@@ -62,12 +57,16 @@ export default function Spotlight({
             -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
           const boxY =
             -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
-          box.style.setProperty("--mouse-x", `${boxX}px`);
-          box.style.setProperty("--mouse-y", `${boxY}px`);
+          box.style.setProperty('--mouse-x', `${boxX}px`);
+          box.style.setProperty('--mouse-y', `${boxY}px`);
         });
       }
     }
   };
+
+  useEffect(() => {
+    onMouseMove();
+  }, [mousePosition]);
 
   return (
     <div className={className} ref={containerRef}>
