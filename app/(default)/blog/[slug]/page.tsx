@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { getBlogPosts } from "@/components/mdx/utils";
-import { notFound } from "next/navigation";
-import PageIllustration from "@/components/page-illustration";
-import Image from "next/image";
-import { CustomMDX } from "@/components/mdx/mdx";
-import RelatedPosts from "./related-posts";
-import Cta from "@/components/cta";
+import type { Metadata } from 'next';
+import { getBlogPosts } from '@/components/mdx/utils';
+import { notFound } from 'next/navigation';
+import PageIllustration from '@/components/page-illustration';
+import Image from 'next/image';
+import { CustomMDX } from '@/components/mdx/mdx';
+import RelatedPosts from './related-posts';
+import Cta from '@/components/cta';
 
 export async function generateStaticParams() {
   const allBlogs = getBlogPosts();
@@ -15,13 +15,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
   const params = await props.params;
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((_post) => _post.slug === params.slug);
 
   if (!post) {
     return;
@@ -35,13 +33,11 @@ export async function generateMetadata(
   };
 }
 
-export default async function SinglePost(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function SinglePost(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+  const post = getBlogPosts().find((_post) => _post.slug === params.slug);
 
   if (!post) notFound();
 
@@ -73,7 +69,7 @@ export default async function SinglePost(
                             src={post.metadata.authorImg}
                             width={36}
                             height={36}
-                            alt={post.metadata.author || ""}
+                            alt={post.metadata.author || ''}
                           />
                         </a>
                       )}

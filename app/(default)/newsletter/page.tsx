@@ -1,15 +1,15 @@
 export const metadata = {
-  title: "Features - Open PRO",
-  description: "Page description",
+  title: 'Features - Open PRO',
+  description: 'Page description',
 };
 
-import PageIllustration from "@/components/page-illustration";
-import Image from "next/image";
-import AvatarImg01 from "@/public/images/avatar-group-01.jpg";
-import AvatarImg02 from "@/public/images/avatar-group-02.jpg";
-import AvatarImg03 from "@/public/images/avatar-group-03.jpg";
-import AvatarImg04 from "@/public/images/avatar-group-04.jpg";
-import FooterSeparator from "@/components/footer-separator";
+import PageIllustration from '@/components/page-illustration';
+import Image from 'next/image';
+import AvatarImg01 from '@/public/images/avatar-group-01.jpg';
+import AvatarImg02 from '@/public/images/avatar-group-02.jpg';
+import AvatarImg03 from '@/public/images/avatar-group-03.jpg';
+import AvatarImg04 from '@/public/images/avatar-group-04.jpg';
+import FooterSeparator from '@/components/footer-separator';
 
 export default function Newsletter() {
   return (
@@ -53,7 +53,7 @@ export default function Newsletter() {
                     />
                   </div>
                   <span>
-                    <strong className="font-normal text-gray-200">20K</strong>{" "}
+                    <strong className="font-normal text-gray-200">20K</strong>{' '}
                     have already subscribed.
                   </span>
                 </div>

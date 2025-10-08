@@ -1,10 +1,10 @@
-import Image from "next/image";
-import SecondaryIllustration from "@/public/images/secondary-illustration.svg";
-import AvatarImg01 from "@/public/images/avatar-01.jpg";
-import AvatarImg02 from "@/public/images/avatar-02.jpg";
-import AvatarImg03 from "@/public/images/avatar-03.jpg";
-import AvatarImg04 from "@/public/images/avatar-04.jpg";
-import PricingTable from "@/components/pricing-table";
+import Image from 'next/image';
+import SecondaryIllustration from '@/public/images/secondary-illustration.svg';
+import AvatarImg01 from '@/public/images/avatar-01.jpg';
+import AvatarImg02 from '@/public/images/avatar-02.jpg';
+import AvatarImg03 from '@/public/images/avatar-03.jpg';
+import AvatarImg04 from '@/public/images/avatar-04.jpg';
+import PricingTable from '@/components/pricing-table';
 
 export default function HeroPricing() {
   return (
@@ -40,7 +40,7 @@ export default function HeroPricing() {
                 href="#0"
               >
                 <span className="text-indigo-200/65">
-                  <span className="font-medium text-gray-200">Large team?</span>{" "}
+                  <span className="font-medium text-gray-200">Large team?</span>{' '}
                   Schedule a Business demo with a member of our team.
                 </span>
                 <span

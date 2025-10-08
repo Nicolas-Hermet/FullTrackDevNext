@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Logo from "./logo";
-import Dropdown from "@/components/dropdown";
-import MobileMenu from "./mobile-menu";
+import Link from 'next/link';
+import Logo from './logo';
+import Dropdown from '@/components/dropdown';
+import MobileMenu from './mobile-menu';
 
 export default function Header() {
   return (

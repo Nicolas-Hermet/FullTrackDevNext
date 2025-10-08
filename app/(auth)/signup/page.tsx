@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "Sign Up - Open PRO",
-  description: "Page description",
+  title: 'Sign Up - Open PRO',
+  description: 'Page description',
 };
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function SignUp() {
   return (
@@ -92,7 +92,7 @@ export default function SignUp() {
           </form>
           {/* Bottom link */}
           <div className="mt-6 text-center text-sm text-indigo-200/65">
-            Already have an account?{" "}
+            Already have an account?{' '}
             <Link className="font-medium text-indigo-500" href="/signin">
               Sign in
             </Link>
