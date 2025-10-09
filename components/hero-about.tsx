@@ -1,28 +1,37 @@
 import Image from 'next/image';
 
-import TeamImg01 from '@/public/images/team-mosaic-01.jpg';
-import TeamImg02 from '@/public/images/team-mosaic-02.jpg';
-import TeamImg03 from '@/public/images/team-mosaic-03.jpg';
-import TeamImg04 from '@/public/images/team-mosaic-04.jpg';
+import TeamImg01 from '@/public/images/home/laptop.png';
+import TeamImg02 from '@/public/images/home/rubio-745.jpg';
+import TeamImg03 from '@/public/images/home/rubio-169.jpg';
+import TeamImg04 from '@/public/images/home/val-vienne.jpg';
 
-export default function HeroAbout() {
+type HeroAboutProps = {
+  showHeader?: boolean;
+};
+
+export default function HeroAbout({ showHeader = true }: HeroAboutProps) {
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
         <div className="py-12 md:py-20">
           {/* Section header */}
-          <div className="pb-12 text-center md:pb-20">
-            <h1 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-              The story behind the project
-            </h1>
-            <div className="mx-auto max-w-3xl">
-              <p className="text-xl text-indigo-200/65">
-                Developers are trusted to create an engaging experience for
-                their companies, so we build tools to help them.
-              </p>
+          {showHeader && (
+            <div className="pb-12 text-center md:pb-20">
+              <h1 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
+                Full Track Dev
+              </h1>
+              <div className="mx-auto max-w-3xl">
+                <p className="text-xl text-indigo-200/65">
+                  An humble Fullstack Software Engineer driving racing cars on
+                  tracks.
+                </p>
+                <p className="text-l text-indigo-200/65">
+                  And who gets shit done for you.
+                </p>
+              </div>
             </div>
-          </div>
+          )}
           <div className="mx-auto max-w-3xl">
             <div className="relative aspect-4/3 w-full">
               <figure
@@ -32,7 +41,7 @@ export default function HeroAbout() {
               >
                 <div className="relative -rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900">
                   <Image
-                    className="opacity-80 grayscale"
+                    className="opacity-80 grayscale transition duration-300 ease-in-out hover:grayscale-0"
                     src={TeamImg02}
                     width={320}
                     height={240}
@@ -48,7 +57,7 @@ export default function HeroAbout() {
               >
                 <div className="relative -rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900">
                   <Image
-                    className="opacity-90 grayscale"
+                    className="opacity-80 grayscale transition duration-300 ease-in-out hover:grayscale-0"
                     src={TeamImg01}
                     width={600}
                     height={338}
@@ -69,7 +78,7 @@ export default function HeroAbout() {
               >
                 <div className="relative rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900">
                   <Image
-                    className="opacity-90 grayscale"
+                    className="opacity-90 grayscale transition duration-300 ease-in-out hover:grayscale-0"
                     src={TeamImg03}
                     width={250}
                     height={188}
@@ -90,7 +99,7 @@ export default function HeroAbout() {
               >
                 <div className="relative rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900 before:opacity-10">
                   <Image
-                    className="opacity-20 grayscale"
+                    className="opacity-20 grayscale transition duration-300 ease-in-out hover:grayscale-0"
                     src={TeamImg04}
                     width={196}
                     height={196}
