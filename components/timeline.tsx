@@ -9,6 +9,7 @@ type TimelineEntry = {
   eyebrow: string;
   title: string;
   description: string;
+  stack?: string;
   aosDelay?: number;
 };
 
@@ -20,49 +21,120 @@ type TimelineYear = {
 
 const timelineYears: TimelineYear[] = [
   {
-    year: '2016',
-    right: {
-      eyebrow: 'The seed',
-      title: 'Open PRO was founded in Milan, Italy',
-      description:
-        'Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.',
-    },
-  },
-  {
-    year: '2019',
+    year: '2010 - 2016',
     left: {
-      eyebrow: 'New features',
-      title: 'Launched the first Open PRO Advanced plan',
-      description:
-        'Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.',
+      eyebrow: 'Aeronautical engineering',
+      title: 'Project and Team manager',
+      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle, from flight testing to model-based systems engineering (MBSE).
+        Contributed to major programs (A350, avionics systems, Silvercrest turbines) with a dual technical and managerial background spanning project leadership, quality management, and international team coordination.`,
+    },
+    right: {
+      eyebrow: 'SWS',
+      title: 'World go-kart endurance Championship',
+      description: 'Finished 30th out of 3424 teams',
       aosDelay: 200,
     },
   },
   {
-    year: '2022',
-    left: {
-      eyebrow: 'Team growth',
-      title: 'Expanded our global engineering crew',
-      description:
-        'Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.',
-      aosDelay: 300,
-    },
+    year: '2016',
     right: {
-      eyebrow: 'Pivoting',
-      title: 'Transitioned to a SaaS business model',
-      description:
-        'Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.',
-      aosDelay: 400,
+      eyebrow: 'SWS',
+      title: 'World go-kart endurance Championship',
+      description: 'Finished 10th out of 3424 teams',
+      aosDelay: 200,
     },
   },
   {
-    year: '2026',
+    year: '2016-2018',
     left: {
-      eyebrow: 'Huge milestone',
-      title: '1 million happy customers',
+      eyebrow: '',
+      title: 'Entreupreneurship experiences',
       description:
-        'Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.',
+        'I tried to launch several startups in the tourism and art market space. Learned a lot, failed fast. This is when I discovered my passion for coding through The Hacking Project Bootcamp.',
+      aosDelay: 200,
+    },
+  },
+  {
+    year: '2018 - 2020',
+    left: {
+      eyebrow: 'ADN France (full remote)',
+      title: 'Team Lead & Software Engineer',
+      description: `Delivered backend features for a low-voltage cabling management solution.
+        Migrated software from Flash to Angular.
+        Managed the project and led a team of four developers.
+        Optimized team workflow to increase production speed by a factor of 12.`,
+      stack: 'Angular 6.x-8.x',
+      aosDelay: 300,
+    },
+  },
+  {
+    year: '2021',
+    left: {
+      eyebrow: 'Cardiologs (full remote)',
+      title: 'Software Engineer',
+      description: `Served as a backend software engineer for a medical startup that aims to diagnose heart diseases from ECGs.
+            Implemented new endpoints to integrate with Apple Health for ECG data.`,
+      stack:
+        'Ruby on Rails 6.x API, RSpec, Docker, Jenkins, Sidekiq, PostgreSQL.',
+      aosDelay: 300,
+    },
+    right: {
+      eyebrow: 'Volant Michel Vaillant x Yéma',
+      title: 'Vainqueur du volant',
+      description: `Désigné vainqueur à l'issue de 3 jours de formations intensives, par un jury composé de pilotes vainqueurs des 24h du mans`,
+      stack: 'Crosslé 90F',
+      aosDelay: 500,
+    },
+  },
+  {
+    year: '2021',
+    left: {
+      eyebrow: 'Full Track Dev creation !',
+      title: 'Fullstack Software Engineer',
+      description: `Delivered engagements for several clients.
+            Mentored interns and apprentices.
+            Refactored test suites to increase coverage from 40\% to 80\%.`,
+      stack:
+        'Ruby on Rails 5.2-8.x, RSpec, Vanilla JS, PostgreSQL, Docker, Github Actions, Next.js, Angular, Vue.js.',
       aosDelay: 600,
+    },
+  },
+  {
+    year: '2021 - 2024',
+    left: {
+      eyebrow: 'Axomove (full remote)',
+      title: 'Tech Lead',
+      description: `Managed and mentored a team of four.
+            Taught design patterns, OOP principles, and engineering best practices.
+            Designed the platform architecture.
+            Implemented CI/CD pipelines.
+            Implemented testing best practices with RSpec.
+            Increased automated test coverage from 10\% to 60\%.
+            Secured and handled sensitive medical data.`,
+      stack:
+        'Ruby on Rails 5.2-6.1, RSpec, Vanilla JS, Github Actions, PostgreSQL, Git.',
+      aosDelay: 800,
+    },
+    right: {
+      eyebrow: 'HVM Historic Tour',
+      title: 'Championnat de France de Formule Ford Historique',
+      description:
+        'Termine 4ème du championnat avec seulement 30% des courses. 71% de podiums.',
+      stack: 'Lotus 69, Crosslé 16F',
+      aosDelay: 1000,
+    },
+  },
+  {
+    year: '2024',
+    left: {
+      eyebrow: 'Lisaia (full remote)',
+      title: 'Fullstack Software Engineer',
+      description: `Served as a software engineer for a medical startup focused on simplifying and industrializing communication between doctors and patients.
+            Owned web application features end to end.
+            Secured and handled sensitive medical data.`,
+      stack:
+        'Ruby on Rails 7.1, RSpec, Stimulus, Sidekiq, Github Actions, PostgreSQL, Redis.',
+      aosDelay: 1200,
     },
   },
 ];
@@ -94,6 +166,16 @@ function TimelineContent({
             {entry.title}
           </h4>
           <p className="text-[1rem] text-indigo-200/65">{entry.description}</p>
+          <div className="inline-flex ">
+            {entry.stack && (
+              <>
+                <span className="text-indigo-200/65 mr-4">Stack: </span>
+                <span className="bg-linear-to-r from-red-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
+                  {entry.stack}
+                </span>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -173,7 +255,7 @@ export default function Timeline() {
             </div>
 
             <div
-              className="relative -my-4 mx-auto max-w-3xl md:-my-6"
+              className="relative -my-4 mx-auto max-w-5xl md:-my-6"
               data-aos-id-timeline=""
             >
               <div
