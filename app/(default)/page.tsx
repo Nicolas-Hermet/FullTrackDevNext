@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Home - Open PRO',
-  description: 'Page description',
+  title: 'Home - Full Track Dev',
+  description: 'Who is Full Track Dev? What do I do as a Software Engineer?',
 };
 
 import PageIllustration from '@/components/page-illustration';
@@ -11,6 +11,7 @@ import Pricing from '@/components/pricing-home';
 import SplitCarousel from '@/components/split-carousel';
 import Cta from '@/components/cta';
 import Timeline from '@/components/timeline';
+import LatestPosts from '@/components/latest-posts';
 
 export default function Home() {
   return (
@@ -18,11 +19,12 @@ export default function Home() {
       <PageIllustration multiple />
       <Hero />
       <Timeline />
-      <Workflows />
+      <LatestPosts />
+      {/* <Workflows />
       <Features />
       <SplitCarousel />
       <Pricing />
-      <Cta />
+      <Cta /> */}
     </>
   );
 }
