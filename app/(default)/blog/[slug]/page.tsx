@@ -120,7 +120,10 @@ export default async function SinglePost(props: {
               </article>
             </div>
 
-            <RelatedPosts />
+            <RelatedPosts
+              currentSlug={post.slug}
+              category={post.metadata.category}
+            />
           </div>
         </div>
       </section>
