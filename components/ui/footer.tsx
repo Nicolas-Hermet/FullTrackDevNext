@@ -5,7 +5,7 @@ import FooterIllustration from '@/public/images/footer-illustration.svg';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mb-5">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         {/* Footer illustration */}
         <div
@@ -19,239 +19,6 @@ export default function Footer() {
             height={378}
             alt="Footer illustration"
           />
-        </div>
-        <div className="grid grid-cols-2 justify-between gap-12 py-8 sm:grid-rows-[auto_auto] md:grid-cols-4 md:grid-rows-[auto_auto] md:py-12 lg:grid-cols-[repeat(4,minmax(0,140px))_1fr] lg:grid-rows-1 xl:gap-20">
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Services freelance
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Direction technique &amp; architecture produit
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Développement fullstack Next.js &amp; Ruby on Rails
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Structuration de workflows CI/CD et tests automatisés
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Mentorat d&apos;équipes produits en full remote
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Stack &amp; expertises
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Next.js, TypeScript, Tailwind CSS
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Ruby on Rails, RSpec, Sidekiq
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  PostgreSQL, Redis, Docker
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Coaching qualité, revues de code &amp; design patterns
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Études de cas clients
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Lisaia &mdash; communication médecin/patient
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Axomove &mdash; plateforme santé digitale
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Cardiologs &mdash; intégration Apple Health
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  ADN France &mdash; pilotage d&apos;équipe full remote
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Full Track Dev &mdash; mission de tech lead freelance
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Blog &amp; passions
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Course automobile &amp; data pour la performance
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Organisation et leadership en full remote
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Développement web moderne &amp; bonnes pratiques
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  71% de podiums en Formule Ford historique
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Télécharger le CV (PDF)
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col-span-2 space-y-4 md:col-span-4 lg:col-span-1 lg:text-right">
-            <div className="flex items-center justify-between lg:flex-col lg:items-end lg:gap-3">
-              <Logo />
-            </div>
-            <ul className="inline-flex gap-1">
-              <li>
-                <a
-                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
-                  href="https://www.linkedin.com/in/nicolas-hermet/"
-                  aria-label="LinkedIn de Nicolas Hermet, développeur freelance"
-                  rel="me"
-                >
-                  <svg
-                    className="h-8 w-8 fill-current"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M29 0H3C1.343 0 0 1.343 0 3v26c0 1.657 1.343 3 3 3h26c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3zM9.339 27H4.669V12.339h4.67V27zM7.004 10.668c-1.497 0-2.707-1.21-2.707-2.707s1.21-2.707 2.707-2.707c1.497 0 2.707 1.21 2.707 2.707s-1.21 2.707-2.707 2.707zM27.331 27h-4.669v-7.669c0-1.829-1.493-3.322-3.322-3.322s-3.322 1.493-3.322 3.322V27h-4.67V12.339h4.67v2.339c1.168-1.829 3.322-2.839 5.322-2.839 3.679 0 6.669 2.99 6.669 6.669V27z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
-                  href="https://medium.com/@n.hermet"
-                  aria-label="Medium de Nicolas Hermet, articles course automobile et remote"
-                  rel="me"
-                >
-                  <svg
-                    className="h-8 w-8 fill-current"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
-                  href="https://github.com/nicolas-hermet"
-                  aria-label="GitHub de Nicolas Hermet, projets web"
-                  rel="me"
-                >
-                  <svg
-                    className="h-8 w-8 fill-current"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-            <p className="text-sm text-indigo-200/65">
-              © {new Date().getFullYear()} Nicolas Hermet · Full Track Dev.
-              Tous droits réservés.
-            </p>
-          </div>
         </div>
         <div className="flex flex-col gap-8 border-t border-gray-800 pt-6 text-sm text-indigo-200/65 md:flex-row md:justify-between lg:items-center">
           <div>
@@ -269,21 +36,259 @@ export default function Footer() {
           </div>
           <div className="text-sm text-center text-indigo-200/65">
             <p>
-              Nicolas Hermet accompagne les startups et scale-ups depuis 2018 en
-              ingénierie système, puis en tant que développeur fullstack et tech
-              lead. Full Track Dev propose des missions orientées produit, santé
-              numérique et performance en full remote.
+              Since 2018, Nicolas Hermet has supported startups and scale-ups in
+              systems engineering, then as a full-stack developer and tech lead.
+              Full Track Dev delivers product-focused tech engagements designed
+              to maximize ROI for your business and performance.
             </p>
+            <p>Even when the team is fully remote.</p>
             <p>
-              Missions récentes : architecture applicative, sécurisation de
-              données médicales, montée en compétence d&apos;équipes
-              distribuées.
+              Recent engagements: functional architecture, retroactive time zone
+              reconciliation, and upskilling distributed teams.
             </p>
             <ul className="space-y-1 text-sm text-indigo-200/65">
-              <li>Expérience confirmée depuis 2010</li>
-              <li>Clients : Traacks, Captive, OFB</li>
-              <li>Disponible pour missions longues ou interventions flash</li>
+              <li>Proven experience since 2010</li>
+              <li>Recent clients: Traacks, Captive, OFB</li>
             </ul>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 justify-between gap-12 py-8 sm:grid-rows-[auto_auto] md:grid-cols-4 md:grid-rows-[auto_auto] md:py-12 lg:grid-cols-[repeat(4,minmax(0,140px))_1fr] lg:grid-rows-1 xl:gap-20">
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-gray-200">
+              Freelance services
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Technical leadership &amp; product vision
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Full-stack Ruby on Rails &amp; Next.js development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Team workflow design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Team mentoring
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Fully remote leadership
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-gray-200">
+              Tech stack &amp; expertise
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Ruby on Rails, RSpec, Sidekiq
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Next.js, TypeScript, Tailwind CSS
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  PostgreSQL, Redis, Docker
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Quality coaching, code reviews &amp; design patterns
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Tech versus business trade-offs
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-gray-200">
+              Client case studies
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Axomove &mdash; digital health platform
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  ADN France &mdash; leading a fully remote team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Full Track Dev &mdash; technology migration
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-gray-200">
+              Blog &amp; interests
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Motorsport &amp; a toolkit to strengthen team cohesion
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Remote organization &amp; leadership
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-indigo-200/65 transition hover:text-indigo-500"
+                  href="#0"
+                >
+                  Modern web development &amp; best practices
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-2 space-y-4 md:col-span-4 lg:col-span-1 lg:text-right">
+            <ul className="inline-flex gap-4">
+              <li>
+                <a
+                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
+                  href="https://www.linkedin.com/in/nicolas-hermet/"
+                  aria-label="Nicolas Hermet on LinkedIn, freelance developer"
+                  rel="me"
+                  target="_blank"
+                >
+                  <svg
+                    className="h-8 w-8 fill-current"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M29 0H3C1.343 0 0 1.343 0 3v26c0 1.657 1.343 3 3 3h26c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3zM9.339 27H4.669V12.339h4.67V27zM7.004 10.668c-1.497 0-2.707-1.21-2.707-2.707s1.21-2.707 2.707-2.707c1.497 0 2.707 1.21 2.707 2.707s-1.21 2.707-2.707 2.707zM27.331 27h-4.669v-7.669c0-1.829-1.493-3.322-3.322-3.322s-3.322 1.493-3.322 3.322V27h-4.67V12.339h4.67v2.339c1.168-1.829 3.322-2.839 5.322-2.839 3.679 0 6.669 2.99 6.669 6.669V27z" />
+                  </svg>
+                </a>
+              </li>
+              {/* <li>
+                <a
+                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
+                  href="https://medium.com/@n.hermet"
+                  aria-label="Nicolas Hermet on Medium, articles on motorsport & remote work"
+                  rel="me"
+                >
+                  <svg
+                    className="h-8 w-8 fill-current"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g transform="translate(16 16) scale(2) translate(-16 -16)">
+                      <path d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z" />
+                    </g>
+                  </svg>
+                </a>
+              </li> */}
+              <li>
+                <a
+                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
+                  href="https://github.com/nicolas-hermet"
+                  aria-label="Nicolas Hermet on GitHub, web projects"
+                  rel="me"
+                  target="_blank"
+                >
+                  <svg
+                    className="h-8 w-8 fill-current"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g transform="translate(16 16) scale(2) translate(-16 -16)">
+                      <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
+                  href="https://www.youtube.com/@FullTrackDev"
+                  aria-label="Nicolas Hermet on YouTube, tech talks &amp; videos"
+                  rel="me"
+                  target="_blank"
+                >
+                  <svg
+                    className="h-8 w-8 fill-current"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g transform="translate(16 16) scale(1.12) translate(-16 -16)">
+                      <path d="M29.675 8.17a3.651 3.651 0 0 0-2.57-2.586C24.667 5.042 16 5.042 16 5.042s-8.667 0-11.105.543A3.651 3.651 0 0 0 2.326 8.17C1.777 10.608 1.777 16 1.777 16s0 5.392.549 7.83a3.651 3.651 0 0 0 2.569 2.586c2.438.543 11.105.543 11.105.543s8.667 0 11.105-.543a3.651 3.651 0 0 0 2.569-2.586c.549-2.438.549-7.83.549-7.83s0-5.392-.549-7.83ZM13.997 20.401v-8.802L21.33 16l-7.333 4.401Z" />
+                    </g>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <p className="whitespace-pre-line text-sm text-end text-indigo-200/65">
+              {`© ${new Date().getFullYear()} Nicolas Hermet
+              All rights reserved.`}
+            </p>
           </div>
         </div>
       </div>
