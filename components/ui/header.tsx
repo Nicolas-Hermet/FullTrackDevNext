@@ -43,6 +43,14 @@ export default function Header() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
+                >
+                  Contactez-moi
+                </Link>
+              </li>
               {/* <li>
                 <Link
                   href="/help/frequently-asked-questions"
