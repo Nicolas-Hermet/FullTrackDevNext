@@ -25,7 +25,7 @@ const timelineYears: TimelineYear[] = [
     left: {
       eyebrow: 'Aeronautical engineering',
       title: 'Project and Team manager',
-      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle, from flight testing to model-based systems engineering (MBSE).
+      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle, from flight testing to model-based systems engineering (MBSE).\n
         Contributed to major programs (A350, avionics systems, Silvercrest turbines) with a dual technical and managerial background spanning project leadership, quality management, and international team coordination.`,
     },
     right: {
@@ -49,8 +49,8 @@ const timelineYears: TimelineYear[] = [
     left: {
       eyebrow: '',
       title: 'Entreupreneurship experiences',
-      description:
-        'I tried to launch several startups in the tourism and art market space. Learned a lot, failed fast. This is when I discovered my passion for coding through The Hacking Project Bootcamp.',
+      description: `I tried to launch several startups in the tourism and art market space. Learned a lot, failed fast.
+        This is when I discovered my passion for coding through The Hacking Project Bootcamp.`,
       aosDelay: 200,
     },
   },
@@ -165,7 +165,9 @@ function TimelineContent({
           <h4 className="font-nacelle text-xl font-semibold text-gray-200">
             {entry.title}
           </h4>
-          <p className="text-[1rem] text-indigo-200/65">{entry.description}</p>
+          <p className="whitespace-pre-line text-[1rem] text-indigo-200/65">
+            {entry.description}
+          </p>
           <div className="inline-flex ">
             {entry.stack && (
               <>
