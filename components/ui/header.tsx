@@ -18,8 +18,8 @@ export default function Header() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             {/* Desktop menu links */}
-            <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
-              <li>
+            <ul className="flex grow flex-wrap items-center justify-end gap-4 text-sm lg:gap-8">
+              {/* <li>
                 <Link
                   href="/pricing"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
@@ -34,7 +34,7 @@ export default function Header() {
                 >
                   About Us
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/blog"
@@ -43,17 +43,16 @@ export default function Header() {
                   Blog
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/help/frequently-asked-questions"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
                 >
                   Help Centre
                 </Link>
-              </li>
+              </li> */}
               {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
+              {/* <Dropdown title="Resources">
                 <li>
                   <Link
                     href="/newsletter"
@@ -78,12 +77,12 @@ export default function Header() {
                     404
                   </Link>
                 </li>
-              </Dropdown>
+              </Dropdown> */}
             </ul>
           </nav>
 
           {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
+          {/* <ul className="flex flex-1 items-center justify-end gap-3">
             <li>
               <Link
                 href="/signin"
@@ -100,7 +99,7 @@ export default function Header() {
                 Register
               </Link>
             </li>
-          </ul>
+          </ul> */}
 
           <MobileMenu />
         </div>
