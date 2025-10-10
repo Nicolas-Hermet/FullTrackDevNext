@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import CvButton from '@/components/cv-button';
+
 type TimelineSide = 'left' | 'right';
 
 type TimelineEntry = {
@@ -96,84 +101,139 @@ function TimelineContent({
 }
 
 export default function Timeline() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [showCvButton, setShowCvButton] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+
+    if (!node) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowCvButton(entry.isIntersecting);
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -20% 0px',
+      }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pb-12 md:pb-20">
-          {/* Section header */}
-          <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
-            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              {/* En anglais: j'apporte une solution technique à votre problème business */}
-              I build tools to solve real-world content problems
-            </h2>
-            <p className="text-lg text-indigo-200/65">
-              In racing as in web development or engineering I always thrive for
-              the best.
-            </p>
-            <p className="text-lg text-indigo-200/65">
-              Always trying to be better everyday.
-            </p>
-          </div>
-          {/* Items */}
-          <div
-            className="relative -my-4 mx-auto max-w-3xl md:-my-6"
-            data-aos-id-timeline=""
-          >
+        <div
+          ref={sectionRef}
+          className="pb-12 md:flex md:flex-row-reverse md:gap-10 md:pb-20"
+        >
+          <aside className="hidden shrink-0 md:block md:w-8 md:self-stretch lg:w-12">
             <div
-              className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 transform bg-gray-800 md:block"
-              aria-hidden="true"
-            />
-            <div className="space-y-12 md:space-y-16">
-              {timelineYears.map((year, index) => {
-                const delays = [
-                  year.left?.aosDelay,
-                  year.right?.aosDelay,
-                ].filter((value): value is number => typeof value === 'number');
-                const delay =
-                  delays.length > 0 ? Math.min(...delays) : undefined;
-                return (
-                  <div
-                    key={`${year.year}-${index}`}
-                    className="relative py-4 md:py-6"
-                    data-aos="fade-up"
-                    data-aos-delay={delay}
-                    data-aos-anchor="[data-aos-id-timeline]"
-                  >
-                    <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-10">
-                      <div className="hidden md:block">
-                        {year.left ? (
-                          <TimelineContent entry={year.left} align="left" />
-                        ) : (
-                          <div aria-hidden="true" />
-                        )}
-                      </div>
+              className={`sticky top-36 transform transition-all duration-300 ${
+                showCvButton
+                  ? 'translate-x-0 opacity-100'
+                  : 'pointer-events-none translate-x-6 opacity-0'
+              }`}
+            >
+              <CvButton />
+            </div>
+          </aside>
 
-                      <div className="relative flex flex-col items-center">
-                        <span className="relative z-10 inline-flex items-center justify-center rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
-                          {year.year}
-                        </span>
-                      </div>
+          <div className="flex-1">
+            <div
+              className={`md:hidden ${
+                showCvButton
+                  ? 'translate-y-0 opacity-100'
+                  : 'pointer-events-none translate-y-2 opacity-0'
+              } sticky bottom-6 z-20 mx-auto flex w-50 max-w-xs justify-center transform transition-all duration-300`}
+            >
+              <CvButton />
+            </div>
 
-                      <div className="hidden md:block">
-                        {year.right ? (
-                          <TimelineContent entry={year.right} align="right" />
-                        ) : (
-                          <div aria-hidden="true" />
-                        )}
-                      </div>
+            <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
+              <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
+                {/* En anglais: j'apporte une solution technique à votre problème business */}
+                I build tools to solve real-world content problems
+              </h2>
+              <p className="text-lg text-indigo-200/65">
+                In racing as in web development or engineering I always thrive
+                for the best.
+              </p>
+              <p className="text-lg text-indigo-200/65">
+                Always trying to be better everyday.
+              </p>
+            </div>
 
-                      <div className="md:hidden space-y-6">
-                        {year.left && (
-                          <TimelineContent entry={year.left} align="left" />
-                        )}
-                        {year.right && (
-                          <TimelineContent entry={year.right} align="right" />
-                        )}
+            <div
+              className="relative -my-4 mx-auto max-w-3xl md:-my-6"
+              data-aos-id-timeline=""
+            >
+              <div
+                className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 transform bg-gray-800 md:block"
+                aria-hidden="true"
+              />
+              <div className="space-y-12 md:space-y-16">
+                {timelineYears.map((year, index) => {
+                  const delays = [
+                    year.left?.aosDelay,
+                    year.right?.aosDelay,
+                  ].filter(
+                    (value): value is number => typeof value === 'number'
+                  );
+                  const delay =
+                    delays.length > 0 ? Math.min(...delays) : undefined;
+                  return (
+                    <div
+                      key={`${year.year}-${index}`}
+                      className="relative py-4 md:py-6"
+                      data-aos="fade-up"
+                      data-aos-delay={delay}
+                      data-aos-anchor="[data-aos-id-timeline]"
+                    >
+                      <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-10">
+                        <div className="hidden md:block">
+                          {year.left ? (
+                            <TimelineContent entry={year.left} align="left" />
+                          ) : (
+                            <div aria-hidden="true" />
+                          )}
+                        </div>
+
+                        <div className="relative flex flex-col items-center">
+                          <span className="relative z-10 inline-flex items-center justify-center rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
+                            {year.year}
+                          </span>
+                        </div>
+
+                        <div className="hidden md:block">
+                          {year.right ? (
+                            <TimelineContent entry={year.right} align="right" />
+                          ) : (
+                            <div aria-hidden="true" />
+                          )}
+                        </div>
+
+                        <div className="space-y-6 md:hidden">
+                          {year.left && (
+                            <TimelineContent entry={year.left} align="left" />
+                          )}
+                          {year.right && (
+                            <TimelineContent entry={year.right} align="right" />
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
