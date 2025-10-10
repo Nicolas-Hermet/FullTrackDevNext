@@ -8,10 +8,12 @@ export default function PostItem({ ...props }) {
   const { category } = useCategoryProvider();
   const isHidden = category !== 'All' && category !== props.metadata.category;
 
+  if (isHidden) {
+    return null;
+  }
+
   return (
-    <article
-      className={`flex h-full flex-col transition-opacity ${isHidden ? 'pointer-events-none opacity-15' : ''}`}
-    >
+    <article className="flex h-full flex-col">
       <header>
         <Link
           className="group relative mb-6 block overflow-hidden rounded-2xl border border-gray-800/80 before:absolute before:inset-0 before:-z-10 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500/50 before:to-indigo-500 before:opacity-50"
