@@ -23,24 +23,17 @@ const timelineYears: TimelineYear[] = [
   {
     year: '2010 - 2016',
     left: {
-      eyebrow: 'Aeronautical engineering',
-      title: 'Project and Team manager',
-      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle, from flight testing to model-based systems engineering (MBSE).\n
+      eyebrow: 'Aeronautical Engineering',
+      title: 'Project and Team Manager',
+      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle—from flight testing to model-based systems engineering (MBSE).\n
         Contributed to major programs (A350, avionics systems, Silvercrest turbines) with a dual technical and managerial background spanning project leadership, quality management, and international team coordination.`,
     },
     right: {
       eyebrow: 'SWS',
-      title: 'World go-kart endurance Championship',
-      description: 'Finished 30th out of 3424 teams',
-      aosDelay: 200,
-    },
-  },
-  {
-    year: '2016',
-    right: {
-      eyebrow: 'SWS',
-      title: 'World go-kart endurance Championship',
-      description: 'Finished 10th out of 3424 teams',
+      title: 'World Go-Kart Endurance Championship',
+      description: `2015: Finished 30th out of 3,424 teams
+      2016: Finished 10th out of 3,424 teams`,
+      stack: 'Sodi RT8, RX, SRT',
       aosDelay: 200,
     },
   },
@@ -48,21 +41,21 @@ const timelineYears: TimelineYear[] = [
     year: '2016-2018',
     left: {
       eyebrow: '',
-      title: 'Entreupreneurship experiences',
-      description: `I tried to launch several startups in the tourism and art market space. Learned a lot, failed fast.
-        This is when I discovered my passion for coding through The Hacking Project Bootcamp.`,
+      title: 'Entrepreneurial experiments',
+      description: `I attempted to launch several startups in the tourism and art space. Learned a lot, failed fast.
+        That's when I discovered my passion for coding through The Hacking Project Bootcamp.`,
       aosDelay: 200,
     },
   },
   {
     year: '2018 - 2020',
     left: {
-      eyebrow: 'ADN France (full remote)',
+      eyebrow: 'ADN France (fully remote)',
       title: 'Team Lead & Software Engineer',
-      description: `Delivered backend features for a low-voltage cabling management solution.
-        Migrated software from Flash to Angular.
-        Managed the project and led a team of four developers.
-        Optimized team workflow to increase production speed by a factor of 12.`,
+      description: `Built backend features for a low-voltage cabling management platform.
+        Led the migration from Flash to Angular.
+        Managed the project and led a four-developer team.
+        Scaled the team's throughput 12x by redesigning workflows.`,
       stack: 'Angular 6.x-8.x',
       aosDelay: 300,
     },
@@ -70,18 +63,18 @@ const timelineYears: TimelineYear[] = [
   {
     year: '2021',
     left: {
-      eyebrow: 'Cardiologs (full remote)',
+      eyebrow: 'Cardiologs (fully remote)',
       title: 'Software Engineer',
-      description: `Served as a backend software engineer for a medical startup that aims to diagnose heart diseases from ECGs.
-            Implemented new endpoints to integrate with Apple Health for ECG data.`,
+      description: `Served as a backend engineer for a medical startup focused on diagnosing heart conditions from ECG data.
+            Implemented new endpoints to integrate ECG data with Apple Health.`,
       stack:
         'Ruby on Rails 6.x API, RSpec, Docker, Jenkins, Sidekiq, PostgreSQL.',
       aosDelay: 300,
     },
     right: {
       eyebrow: 'Volant Michel Vaillant x Yéma',
-      title: 'Vainqueur du volant',
-      description: `Désigné vainqueur à l'issue de 3 jours de formations intensives, par un jury composé de pilotes vainqueurs des 24h du mans`,
+      title: 'Volant winner',
+      description: `Named the winner after three days of intensive training by a jury of 24 Hours of Le Mans champions.`,
       stack: 'Crosslé 90F',
       aosDelay: 500,
     },
@@ -89,11 +82,11 @@ const timelineYears: TimelineYear[] = [
   {
     year: '2021',
     left: {
-      eyebrow: 'Full Track Dev creation !',
+      eyebrow: 'Full Track Dev launch!',
       title: 'Fullstack Software Engineer',
       description: `Delivered engagements for several clients.
             Mentored interns and apprentices.
-            Refactored test suites to increase coverage from 40\% to 80\%.`,
+            Refactored test suites to raise coverage from 40\% to 80\%.`,
       stack:
         'Ruby on Rails 5.2-8.x, RSpec, Vanilla JS, PostgreSQL, Docker, Github Actions, Next.js, Angular, Vue.js.',
       aosDelay: 600,
@@ -102,13 +95,13 @@ const timelineYears: TimelineYear[] = [
   {
     year: '2021 - 2024',
     left: {
-      eyebrow: 'Axomove (full remote)',
+      eyebrow: 'Axomove (fully remote)',
       title: 'Tech Lead',
-      description: `Managed and mentored a team of four.
+      description: `Managed and mentored a four-person team.
             Taught design patterns, OOP principles, and engineering best practices.
             Designed the platform architecture.
             Implemented CI/CD pipelines.
-            Implemented testing best practices with RSpec.
+            Introduced testing best practices with RSpec.
             Increased automated test coverage from 10\% to 60\%.
             Secured and handled sensitive medical data.`,
       stack:
@@ -117,9 +110,9 @@ const timelineYears: TimelineYear[] = [
     },
     right: {
       eyebrow: 'HVM Historic Tour',
-      title: 'Championnat de France de Formule Ford Historique',
+      title: 'French Historic Formula Ford Championship',
       description:
-        'Termine 4ème du championnat avec seulement 30% des courses. 71% de podiums.',
+        'Finished 4th overall despite running only 30% of the races. 71% podium rate.',
       stack: 'Lotus 69, Crosslé 16F',
       aosDelay: 1000,
     },
@@ -127,11 +120,11 @@ const timelineYears: TimelineYear[] = [
   {
     year: '2024',
     left: {
-      eyebrow: 'Lisaia (full remote)',
+      eyebrow: 'Lisaia (fully remote)',
       title: 'Fullstack Software Engineer',
-      description: `Served as a software engineer for a medical startup focused on simplifying and industrializing communication between doctors and patients.
+      description: `Served as a fullstack engineer for a medical startup streamlining communication between doctors and patients.
             Owned web application features end to end.
-            Secured and handled sensitive medical data.`,
+            Safeguarded sensitive medical data.`,
       stack:
         'Ruby on Rails 7.1, RSpec, Stimulus, Sidekiq, Github Actions, PostgreSQL, Redis.',
       aosDelay: 1200,
@@ -171,7 +164,9 @@ function TimelineContent({
           <div className="inline-flex ">
             {entry.stack && (
               <>
-                <span className="text-indigo-200/65 mr-4">Stack: </span>
+                <span className="text-indigo-200/65 mr-4">
+                  {align === 'left' ? 'Stack: ' : 'Cars: '}
+                </span>
                 <span className="bg-linear-to-r from-red-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
                   {entry.stack}
                 </span>
@@ -248,11 +243,11 @@ export default function Timeline() {
                 I build tools to solve real-world content problems
               </h2>
               <p className="text-lg text-indigo-200/65">
-                In racing as in web development or engineering I always thrive
+                In racing, as in web development or engineering, I always strive
                 for the best.
               </p>
               <p className="text-lg text-indigo-200/65">
-                Always trying to be better everyday.
+                Always pushing to be better every day.
               </p>
             </div>
 
