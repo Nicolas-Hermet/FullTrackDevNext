@@ -10,12 +10,14 @@ import Features from '@/components/features';
 import Pricing from '@/components/pricing-home';
 import SplitCarousel from '@/components/split-carousel';
 import Cta from '@/components/cta';
+import Timeline from '@/components/timeline';
 
 export default function Home() {
   return (
     <>
-      <PageIllustration />
+      <PageIllustration multiple />
       <Hero />
+      <Timeline />
       <Workflows />
       <Features />
       <SplitCarousel />
