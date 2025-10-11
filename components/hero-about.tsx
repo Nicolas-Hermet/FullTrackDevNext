@@ -3,7 +3,7 @@ import Image from 'next/image';
 import TeamImg01 from '@/public/images/home/laptop.png';
 import TeamImg02 from '@/public/images/home/rubio-745.jpg';
 import TeamImg03 from '@/public/images/home/rubio-169.jpg';
-import TeamImg04 from '@/public/images/home/val-vienne.jpg';
+import TeamImg04 from '@/public/images/home/Teletravail_guide_complet_Intro1.jpg';
 
 type HeroAboutProps = {
   showHeader?: boolean;
@@ -99,7 +99,7 @@ export default function HeroAbout({ showHeader = true }: HeroAboutProps) {
               >
                 <div className="relative rotate-2 overflow-hidden rounded-2xl before:absolute before:inset-0 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500 before:to-gray-900 before:opacity-10">
                   <Image
-                    className="opacity-20 grayscale transition duration-300 ease-in-out hover:grayscale-0"
+                    className="opacity-25 grayscale transition duration-300 ease-in-out hover:grayscale-0"
                     src={TeamImg04}
                     width={196}
                     height={196}
