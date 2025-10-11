@@ -4,6 +4,7 @@ import PostLink from './link';
 import PostImage from './image';
 import rehypePrettyCode from 'rehype-pretty-code';
 import Youtube from '@/components/youtube';
+import Tweet from '@/components/tweet';
 
 const transformToSlug = (input: string) =>
   input
@@ -39,6 +40,7 @@ const mdxComponents = {
   Link: PostLink,
   Image: PostImage,
   Youtube,
+  Tweet,
 };
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
