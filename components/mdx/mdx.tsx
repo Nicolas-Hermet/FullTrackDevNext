@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import PostLink from './link';
 import PostImage from './image';
 import rehypePrettyCode from 'rehype-pretty-code';
+import Youtube from '@/components/youtube';
 
 const transformToSlug = (input: string) =>
   input
@@ -37,6 +38,7 @@ const mdxComponents = {
   h4: generateHeading(4),
   Link: PostLink,
   Image: PostImage,
+  Youtube,
 };
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
