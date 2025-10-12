@@ -48,7 +48,7 @@ export default async function SinglePost(props: {
         <div className="px-4 sm:px-6">
           <div className="py-12 md:py-20">
             {/* Single article */}
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-3xl mb-6">
               <article>
                 {/* Post header */}
                 <header className="mb-8">
@@ -121,6 +121,8 @@ export default async function SinglePost(props: {
                 </div>
               </article>
             </div>
+
+            <Cta />
 
             <RelatedPosts
               currentSlug={post.slug}

@@ -6,6 +6,7 @@ export const metadata = {
 import PageIllustration from '@/components/page-illustration';
 import Hero from '@/components/hero-about';
 import Timeline from '@/components/timeline';
+import Cta from '@/components/cta';
 // import Team from '@/components/team';
 // import Benefits from '@/components/benefits';
 // import Career from '@/components/career';
@@ -21,8 +22,8 @@ export default function About() {
       {/* <Team />
       <Benefits />
       <Career />
-      <Clients />
-      <Cta /> */}
+      <Clients /> */}
+      <Cta />
     </>
   );
 }
