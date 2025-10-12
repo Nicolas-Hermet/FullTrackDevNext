@@ -5,8 +5,9 @@ import BlogFilters from './filters';
 import PostItem from '@/app/(default)/blog/post-item';
 
 export const metadata = {
-  title: 'Blog - Open PRO',
-  description: 'Page description',
+  title: 'Blog - Full Track Dev - Nicolas Hermet',
+  description:
+    'Des articles de fond, sur les sujet du télétravail, de la tech et de la course auto.',
 };
 
 import Cta from '@/components/cta';
@@ -30,12 +31,16 @@ export default function Blog() {
             {/* Section header */}
             <div className="pb-12 text-center">
               <h1 className="animate-title pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-                The Open PRO Blog
+                Full Track Dev - Blog
               </h1>
               <div className="mx-auto max-w-3xl">
                 <p className="text-xl text-indigo-200/65">
-                  Discover the latest news, tips and user research insights from
-                  Open PRO.
+                  J'ai commencé à écrire pendant les divers confinements sur le
+                  sujet du Télétravail. Pendant ma saison en Formule Ford mon
+                  sponsor principal souhaitait que j'écrive sur les divers
+                  courses. Depuis j'ai pris gout au blogging et vous partage ici
+                  divers enseignements tant pesonnels, que professionnel sur les
+                  sujets tech, remote ou racing.
                 </p>
               </div>
             </div>
