@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import NotFoundImage from '@/public/images/404.jpg';
+import NotFoundImage from '@/public/images/fail.gif';
 import PageIllustration from '@/components/page-illustration';
 import FooterSeparator from '@/components/footer-separator';
 import Footer from '@/components/ui/footer';
@@ -17,8 +17,8 @@ export default function NotFound() {
                 <Image
                   className="mx-auto rotate-2 rounded-2xl"
                   src={NotFoundImage}
-                  width={196}
-                  height={196}
+                  width={392}
+                  height={392}
                   alt="A funny dog with a strange expression on his face"
                 />
                 <div className="relative -mt-8">
