@@ -90,7 +90,9 @@ export default async function SinglePost(props: {
                           className="btn-sm relative rounded-full bg-gray-800/40 px-2.5 py-0.5 text-xs font-normal before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-gray-700/.15),--theme(--color-gray-700/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-gray-800/60"
                           href="#0"
                         >
-                          <span className="bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">
+                          <span
+                            className={`${post.metadata.category?.toLowerCase()}-chip`}
+                          >
                             {post.metadata.category}
                           </span>
                         </a>
@@ -103,7 +105,7 @@ export default async function SinglePost(props: {
                 {post.metadata.image && (
                   <figure className="relative my-8 overflow-hidden rounded-2xl border border-gray-800/80 before:absolute before:inset-0 before:-z-10 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500/50 before:to-indigo-500 before:opacity-50 lg:-ml-32 lg:-mr-32">
                     <Image
-                      className="aspect-video w-full object-cover opacity-70 grayscale"
+                      className="aspect-video w-full object-cover opacity-70 grayscale transistion duration-500 ease-in-out hover:grayscale-0"
                       src={post.metadata.image}
                       width={1024}
                       height={576}
