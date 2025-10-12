@@ -6,11 +6,11 @@ export const metadata = {
 import PageIllustration from '@/components/page-illustration';
 import Hero from '@/components/hero-about';
 import Timeline from '@/components/timeline';
-import Team from '@/components/team';
-import Benefits from '@/components/benefits';
-import Career from '@/components/career';
-import Clients from '@/components/clients';
-import Cta from '@/components/cta';
+// import Team from '@/components/team';
+// import Benefits from '@/components/benefits';
+// import Career from '@/components/career';
+// import Clients from '@/components/clients';
+// import Cta from '@/components/cta';
 
 export default function About() {
   return (
@@ -18,11 +18,11 @@ export default function About() {
       <PageIllustration multiple />
       <Hero />
       <Timeline />
-      <Team />
+      {/* <Team />
       <Benefits />
       <Career />
       <Clients />
-      <Cta />
+      <Cta /> */}
     </>
   );
 }
