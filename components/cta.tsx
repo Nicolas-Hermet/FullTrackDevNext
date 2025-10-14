@@ -25,13 +25,13 @@ export default function Cta() {
               data-aos="fade-up"
               data-aos-delay={200}
             >
-              Intéressé par ce que j'écris ?
+              Curious about what you read here?
             </p>
             <h2
               className="animate-title pb-8 font-nacelle text-3xl font-semibold text-transparent md:text-4xl"
               data-aos="fade-up"
             >
-              Travaillez avec-moi
+              Let’s work together
             </h2>
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
               <div data-aos="fade-up" data-aos-delay={400}>
@@ -40,7 +40,7 @@ export default function Cta() {
                   href="#0"
                 >
                   <span className="relative inline-flex items-center">
-                    Contact
+                    Get in touch
                     <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
                       -&gt;
                     </span>

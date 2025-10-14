@@ -14,7 +14,7 @@ export default function CvButton({ className }: CvButtonProps) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Voir mon CV
+      See my resume
     </a>
   );
 }

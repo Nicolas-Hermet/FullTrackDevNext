@@ -7,7 +7,7 @@ import PostItem from '@/app/(default)/blog/post-item';
 export const metadata = {
   title: 'Blog - Full Track Dev - Nicolas Hermet',
   description:
-    'Des articles de fond, sur les sujet du télétravail, de la tech et de la course auto.',
+    'In-depth articles covering remote work, technology, and motorsport.',
 };
 
 import Cta from '@/components/cta';
@@ -35,12 +35,11 @@ export default function Blog() {
               </h1>
               <div className="mx-auto max-w-3xl">
                 <p className="text-xl text-indigo-200/65">
-                  J'ai commencé à écrire pendant les divers confinements sur le
-                  sujet du Télétravail. Pendant ma saison en Formule Ford mon
-                  sponsor principal souhaitait que j'écrive sur les divers
-                  courses. Depuis j'ai pris gout au blogging et vous partage ici
-                  divers enseignements tant pesonnels, que professionnel sur les
-                  sujets tech, remote ou racing.
+                  I started writing during the various lockdowns, mostly about
+                  remote work. During my Formula Ford season, my main sponsor
+                  asked me to recap each race. Since then, blogging has become
+                  something I truly enjoy, and I share lessons here—personal and
+                  professional—across tech, remote work, and racing.
                 </p>
               </div>
             </div>

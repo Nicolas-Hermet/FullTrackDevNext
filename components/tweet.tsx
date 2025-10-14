@@ -118,7 +118,7 @@ export default function Tweet({
               <span className="text-xs text-slate-400">{authorHandle}</span>
             ) : (
               <span className="text-xs text-slate-400">
-                Partagé depuis X (Twitter)
+                Shared via X (Twitter)
               </span>
             )}
           </div>
@@ -130,7 +130,7 @@ export default function Tweet({
           rel="noopener noreferrer"
         >
           <TwitterLogo />
-          Voir sur X
+          View on X
         </a>
       </div>
       <div ref={containerRef} className="mt-5">
@@ -140,7 +140,7 @@ export default function Tweet({
           data-dnt="true"
           data-theme="dark"
         >
-          <a href={tweetUrl}>Lire le tweet</a>
+          <a href={tweetUrl}>Read the tweet</a>
         </blockquote>
       </div>
     </figure>
