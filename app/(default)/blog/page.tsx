@@ -58,7 +58,7 @@ export default function Blog() {
               </CategoryProvider>
 
               {/* Pagination */}
-              <Pagination />
+              {/* <Pagination /> */}
             </div>
           </div>
         </div>
