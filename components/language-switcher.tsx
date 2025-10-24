@@ -1,11 +1,12 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import Dropdown from '@/components/dropdown';
 
 export default function LanguageSwitcher() {
   const params = useParams();
+  const pathname = usePathname();
   const currentLocale = params.locale as string;
 
   return (
@@ -35,7 +36,7 @@ export default function LanguageSwitcher() {
     >
       <li>
         <Link
-          href="/"
+          href={pathname}
           locale="en"
           className={`flex rounded-lg px-2 py-1.5 text-sm transition-colors ${
             currentLocale === 'en'
@@ -48,7 +49,7 @@ export default function LanguageSwitcher() {
       </li>
       <li>
         <Link
-          href="/"
+          href={pathname}
           locale="fr"
           className={`flex rounded-lg px-2 py-1.5 text-sm transition-colors ${
             currentLocale === 'fr'
