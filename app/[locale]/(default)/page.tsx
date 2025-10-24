@@ -5,11 +5,6 @@ export const metadata = {
 
 import PageIllustration from '@/components/page-illustration';
 import Hero from '@/components/hero-home';
-import Workflows from '@/components/workflows';
-import Features from '@/components/features';
-import Pricing from '@/components/pricing-home';
-import SplitCarousel from '@/components/split-carousel';
-import Cta from '@/components/cta';
 import Timeline from '@/components/timeline';
 import LatestPosts from '@/components/latest-posts';
 

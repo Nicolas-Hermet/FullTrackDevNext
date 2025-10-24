@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);

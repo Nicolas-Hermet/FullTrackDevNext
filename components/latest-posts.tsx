@@ -1,6 +1,6 @@
 import { getBlogPosts } from '@/components/mdx/utils';
-import CategoryProvider from '@/app/(default)/blog/category-provider';
-import PostItem from '@/app/(default)/blog/post-item';
+import CategoryProvider from '@/app/[locale]/(default)/blog/category-provider';
+import PostItem from '@/app/[locale]/(default)/blog/post-item';
 
 export default function LatestPosts() {
   const allBlogs = getBlogPosts();

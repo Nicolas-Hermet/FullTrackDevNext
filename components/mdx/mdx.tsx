@@ -45,7 +45,7 @@ const mdxComponents = {
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
-export function CustomMDX(props: unknown) {
+export function CustomMDX(props: any) {
   const rehypePrettyCodeOptions = {
     theme: 'one-dark-pro',
     keepBackground: false,

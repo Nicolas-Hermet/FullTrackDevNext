@@ -2,7 +2,7 @@ import { getBlogPosts } from '@/components/mdx/utils';
 import CategoryProvider from './category-provider';
 import PageIllustration from '@/components/page-illustration';
 import BlogFilters from './filters';
-import PostItem from '@/app/(default)/blog/post-item';
+import PostItem from './post-item';
 
 export const metadata = {
   title: 'Blog - Full Track Dev - Nicolas Hermet',
@@ -11,7 +11,6 @@ export const metadata = {
 };
 
 import Cta from '@/components/cta';
-import Pagination from './pagination';
 
 export default function Blog() {
   const allBlogs = getBlogPosts();

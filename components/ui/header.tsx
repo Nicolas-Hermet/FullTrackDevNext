@@ -1,9 +1,10 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Logo from './logo';
 import Dropdown from '@/components/dropdown';
 import MobileMenu from './mobile-menu';
+import LanguageSwitcher from '@/components/language-switcher';
 
 export default function Header() {
   return (
@@ -59,7 +60,6 @@ export default function Header() {
                   Help Centre
                 </Link>
               </li> */}
-              {/* 1st level: hover */}
               {/* <Dropdown title="Resources">
                 <li>
                   <Link
@@ -86,6 +86,7 @@ export default function Header() {
                   </Link>
                 </li>
               </Dropdown> */}
+              <LanguageSwitcher />
             </ul>
           </nav>
 

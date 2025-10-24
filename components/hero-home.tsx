@@ -1,7 +1,9 @@
 import Hero from '@/components/hero-about';
 import CvButton from '@/components/cv-button';
+import { useTranslations } from 'next-intl';
 
 export default function HeroHome() {
+  const t = useTranslations('HeroHome');
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -13,7 +15,7 @@ export default function HeroHome() {
               className="animate-title pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
               data-aos="fade-up"
             >
-              Full Track Dev
+              {t('title')}
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -21,15 +23,14 @@ export default function HeroHome() {
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                An humble Fullstack Software Engineer driving racing cars on
-                tracks.
+                {t('subtitle')}
               </p>
               <p
                 className="mb-8 text-md text-indigo-200/65"
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                And who gets shit done for you.
+                {t('tagline')}
               </p>
               <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
@@ -38,7 +39,7 @@ export default function HeroHome() {
                     href="#0"
                   >
                     <span className="relative inline-flex items-center">
-                      Contact
+                      {t('contactButton')}
                       <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>

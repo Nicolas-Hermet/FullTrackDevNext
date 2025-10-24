@@ -6,9 +6,10 @@ import { Transition } from '@headlessui/react';
 type DropdownProps = {
   children: React.ReactNode;
   title: string;
+  svg?: React.ReactNode;
 };
 
-export default function Dropdown({ children, title }: DropdownProps) {
+export default function Dropdown({ children, title, svg }: DropdownProps) {
   const dropdownRef = useRef<HTMLUListElement | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -33,14 +34,14 @@ export default function Dropdown({ children, title }: DropdownProps) {
       onMouseLeave={() => setDropdownOpen(false)}
     >
       <span className="flex cursor-pointer items-center text-gray-200 transition group-hover:text-indigo-500">
-        {title}
+        {svg || title}
       </span>
       <button
         className="shrink-0 p-1"
         aria-expanded={dropdownOpen}
         onClick={handleClick}
       >
-        <span className="sr-only">Show submenu for "{title}"</span>
+        <span className="sr-only">Show submenu for "{title || 'menu'}"</span>
         <svg
           className="fill-gray-500"
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +56,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
           ref={dropdownRef}
           show={dropdownOpen}
           as="ul"
-          className="relative mt-5 w-36 rounded-xl bg-gray-900/90 p-2 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transform transition ease-out data-enter:data-closed:-translate-y-2 data-closed:opacity-0"
+          className="relative mt-5 w-12 rounded-xl bg-gray-900/90 p-2 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transform transition ease-out data-enter:data-closed:-translate-y-2 data-closed:opacity-0"
           onBlur={handleFocusOut}
         >
           {children}
