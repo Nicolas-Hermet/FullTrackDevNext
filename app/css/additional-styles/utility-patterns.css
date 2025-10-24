@@ -1,0 +1,95 @@
+/* Buttons */
+.btn,
+.btn-sm {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all;
+}
+
+.btn {
+    @apply px-4 py-[11px];
+}
+
+.btn-sm {
+    @apply px-3 py-[7px];
+}
+
+/* Forms */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+    @apply border border-gray-700 bg-gray-900/50 focus:border-gray-600 focus:ring-0 focus:ring-offset-0;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+    @apply rounded-lg px-4 py-2.5 text-sm text-gray-200;
+}
+
+.form-input,
+.form-textarea {
+    @apply placeholder-gray-600;
+}
+
+.form-select {
+    @apply pr-10;
+}
+
+.form-checkbox,
+.form-radio {
+    @apply text-indigo-500;
+}
+
+.form-checkbox {
+    @apply rounded-xs;
+}
+
+.animate-title {
+    @apply animate-[gradient_10s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-300),var(--color-gray-50),var(--color-indigo-400),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text
+}
+
+.all-button {
+    @apply relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-indigo-500/0),--theme(--color-indigo-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]
+}
+
+.remote-button {
+    @apply relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-teal-500/0),--theme(--color-teal-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]
+}
+
+.racing-button {
+    @apply relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-orange-500/0),--theme(--color-orange-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]
+}
+
+.personnal-button {
+    @apply relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-lime-500/0),--theme(--color-lime-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]
+}
+
+.engineering-button {
+    @apply relative bg-linear-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-red-500/0),--theme(--color-red-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]
+}
+
+.remote-chip {
+    @apply bg-linear-to-r from-teal-500 to-teal-200 bg-clip-text text-transparent
+}
+
+.racing-chip {
+    @apply bg-linear-to-r from-orange-500 to-orange-200 bg-clip-text text-transparent
+}
+
+.personnal-chip {
+    @apply bg-linear-to-r from-lime-500 to-lime-200 bg-clip-text text-transparent
+}
+
+.engineering-chip {
+    @apply bg-linear-to-r from-red-500 to-red-200 bg-clip-text text-transparent
+}
