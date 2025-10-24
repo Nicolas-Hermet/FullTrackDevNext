@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getBlogPosts } from '@/components/mdx/utils';
+import { getBlogPosts, getBlogPost } from '@/components/mdx/utils';
 import { notFound } from 'next/navigation';
 import PageIllustration from '@/components/page-illustration';
 import Image from 'next/image';
@@ -8,18 +8,25 @@ import RelatedPosts from './related-posts';
 import Cta from '@/components/cta';
 
 export async function generateStaticParams() {
-  const allBlogs = getBlogPosts();
+  // Generate params for all locales
+  const locales = ['en', 'fr'];
+  const allParams: { locale: string; slug: string }[] = [];
 
-  return allBlogs.map((post) => ({
-    slug: post.slug,
-  }));
+  for (const locale of locales) {
+    const posts = getBlogPosts(locale);
+    posts.forEach((post) => {
+      allParams.push({ locale, slug: post.slug });
+    });
+  }
+
+  return allParams;
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata | undefined> {
   const params = await props.params;
-  const post = getBlogPosts().find((_post) => _post.slug === params.slug);
+  const post = getBlogPost(params.slug, params.locale);
 
   if (!post) {
     return;
@@ -34,10 +41,10 @@ export async function generateMetadata(props: {
 }
 
 export default async function SinglePost(props: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
   const params = await props.params;
-  const post = getBlogPosts().find((_post) => _post.slug === params.slug);
+  const post = getBlogPost(params.slug, params.locale);
 
   if (!post) notFound();
 
@@ -127,6 +134,7 @@ export default async function SinglePost(props: {
             <RelatedPosts
               currentSlug={post.slug}
               category={post.metadata.category}
+              locale={params.locale}
             />
           </div>
         </div>

@@ -5,6 +5,7 @@ import { getBlogPosts } from '@/components/mdx/utils';
 type RelatedPostsProps = {
   currentSlug: string;
   category?: string;
+  locale?: string;
 };
 
 function pickRandomPosts<T>(posts: T[], count: number) {
@@ -21,12 +22,13 @@ function pickRandomPosts<T>(posts: T[], count: number) {
 export default function RelatedPosts({
   currentSlug,
   category,
+  locale = 'fr',
 }: RelatedPostsProps) {
   if (!category) {
     return null;
   }
 
-  const relatedPosts = getBlogPosts().filter(
+  const relatedPosts = getBlogPosts(locale).filter(
     (post) => post.metadata.category === category && post.slug !== currentSlug
   );
 

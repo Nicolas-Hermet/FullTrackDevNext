@@ -1,8 +1,12 @@
 import { getBlogPosts } from '@/components/mdx/utils';
 import PostItem from '@/app/[locale]/(default)/blog/post-item';
 
-export default function News() {
-  const allBlogs = getBlogPosts();
+type NewsProps = {
+  locale?: string;
+};
+
+export default function News({ locale = 'fr' }: NewsProps) {
+  const allBlogs = getBlogPosts(locale);
 
   // Sort posts by date
   allBlogs.sort((a, b) =>

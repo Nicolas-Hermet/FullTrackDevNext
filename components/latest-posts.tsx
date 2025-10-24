@@ -2,8 +2,12 @@ import { getBlogPosts } from '@/components/mdx/utils';
 import CategoryProvider from '@/app/[locale]/(default)/blog/category-provider';
 import PostItem from '@/app/[locale]/(default)/blog/post-item';
 
-export default function LatestPosts() {
-  const allBlogs = getBlogPosts();
+type LatestPostsProps = {
+  locale?: string;
+};
+
+export default function LatestPosts({ locale = 'fr' }: LatestPostsProps) {
+  const allBlogs = getBlogPosts(locale);
   allBlogs.sort((a, b) =>
     new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt) ? -1 : 1
   );

@@ -12,8 +12,13 @@ export const metadata = {
 
 import Cta from '@/components/cta';
 
-export default function Blog() {
-  const allBlogs = getBlogPosts();
+export default async function Blog({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const allBlogs = getBlogPosts(locale);
 
   // Sort posts by date
   allBlogs.sort((a, b) =>

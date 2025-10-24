@@ -8,13 +8,19 @@ import Hero from '@/components/hero-home';
 import Timeline from '@/components/timeline';
 import LatestPosts from '@/components/latest-posts';
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <>
       <PageIllustration multiple />
       <Hero />
       <Timeline />
-      <LatestPosts />
+      <LatestPosts locale={locale} />
       {/* <Workflows />
       <Features />
       <SplitCarousel />
