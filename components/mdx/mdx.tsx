@@ -32,11 +32,31 @@ const generateHeading =
     ]);
   };
 
+const Paragraph = ({ children }: { children: React.ReactNode }) => {
+  // Check if children contains block-level elements (figure, div, etc.)
+  const hasBlockElement = React.Children.toArray(children).some(
+    (child) =>
+      React.isValidElement(child) &&
+      (child.type === 'figure' ||
+        child.type === 'div' ||
+        (typeof child.type === 'function' && child.type.name === 'PostImage'))
+  );
+
+  // If it contains block elements, render children directly without wrapping in <p>
+  if (hasBlockElement) {
+    return <>{children}</>;
+  }
+
+  // Otherwise, render as normal paragraph
+  return <p>{children}</p>;
+};
+
 const mdxComponents = {
   h1: generateHeading(1),
   h2: generateHeading(2),
   h3: generateHeading(3),
   h4: generateHeading(4),
+  p: Paragraph,
   Link: PostLink,
   Image: PostImage,
   Youtube,
