@@ -1,12 +1,14 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Logo from './logo';
-import Dropdown from '@/components/dropdown';
 import MobileMenu from './mobile-menu';
 import LanguageSwitcher from '@/components/language-switcher';
 
 export default function Header() {
+  const t = useTranslations('Header');
+
   return (
     <header className="z-30 mt-2 w-full md:mt-5">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -41,7 +43,7 @@ export default function Header() {
                   href="/blog"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
                 >
-                  Blog
+                  {t('nav.blog')}
                 </Link>
               </li>
               <li>
@@ -49,7 +51,7 @@ export default function Header() {
                   href="/contact"
                   className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
                 >
-                  Contact me
+                  {t('nav.contact')}
                 </Link>
               </li>
               {/* <li>

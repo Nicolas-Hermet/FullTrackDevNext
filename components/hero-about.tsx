@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import TeamImg01 from '@/public/images/home/laptop.png';
 import TeamImg02 from '@/public/images/home/rubio-745.jpg';
@@ -10,6 +11,8 @@ type HeroAboutProps = {
 };
 
 export default function HeroAbout({ showHeader = true }: HeroAboutProps) {
+  const t = useTranslations('HeroAbout');
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -19,16 +22,11 @@ export default function HeroAbout({ showHeader = true }: HeroAboutProps) {
           {showHeader && (
             <div className="pb-12 text-center md:pb-20">
               <h1 className="animate-title pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-                Full Track Dev
+                {t('title')}
               </h1>
               <div className="mx-auto max-w-3xl">
-                <p className="text-xl text-indigo-200/65">
-                  An humble Fullstack Software Engineer driving racing cars on
-                  tracks.
-                </p>
-                <p className="text-l text-indigo-200/65">
-                  And who gets shit done for you.
-                </p>
+                <p className="text-xl text-indigo-200/65">{t('subtitle')}</p>
+                <p className="text-l text-indigo-200/65">{t('tagline')}</p>
               </div>
             </div>
           )}

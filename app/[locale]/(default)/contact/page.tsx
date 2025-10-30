@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { useTranslations } from 'next-intl';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import ReCaptchaProvider from '@/components/recaptcha-provider';
 import PageIllustration from '@/components/page-illustration';
 import FooterSeparator from '@/components/footer-separator';
 
 function ContactForm() {
+  const t = useTranslations('Contact');
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     name: '',
@@ -20,6 +22,18 @@ function ContactForm() {
     type: 'success' | 'error' | null;
     text: string;
   }>({ type: null, text: '' });
+  const intro = t.raw('intro') as string[];
+  const fields = t.raw('form.fields') as {
+    name: { label: string; placeholder: string };
+    email: { label: string; placeholder: string };
+    topic: { label: string; placeholder: string };
+    subject: { label: string; placeholder: string };
+    description: { label: string; placeholder: string };
+  };
+  const topicOptions = t.raw('form.topic.options') as {
+    value: string;
+    label: string;
+  }[];
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -46,7 +60,7 @@ function ContactForm() {
       ) {
         setMessage({
           type: 'error',
-          text: 'Veuillez remplir tous les champs.',
+          text: t('errors.missingFields'),
         });
         setIsLoading(false);
         return;
@@ -56,7 +70,7 @@ function ContactForm() {
       if (!executeRecaptcha) {
         setMessage({
           type: 'error',
-          text: 'reCAPTCHA not ready. Please try again.',
+          text: t('errors.recaptchaNotReady'),
         });
         setIsLoading(false);
         return;
@@ -81,7 +95,7 @@ function ContactForm() {
       if (response.ok) {
         setMessage({
           type: 'success',
-          text: 'Message envoyé avec succès ! Je vous répondrai bientôt.',
+          text: t('success'),
         });
         // Réinitialiser le formulaire
         setFormData({
@@ -94,14 +108,14 @@ function ContactForm() {
       } else {
         setMessage({
           type: 'error',
-          text: data.error || 'Une erreur est survenue. Veuillez réessayer.',
+          text: data.error || t('errors.generic'),
         });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setMessage({
         type: 'error',
-        text: 'Une erreur est survenue. Veuillez réessayer.',
+        text: t('errors.generic'),
       });
     } finally {
       setIsLoading(false);
@@ -117,21 +131,14 @@ function ContactForm() {
             {/* Section header */}
             <div className="pb-12 text-center">
               <h1 className="animate-title pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-                Contact Me
+                {t('title')}
               </h1>
               <div className="mx-auto max-w-3xl">
-                <p className="text-xl text-indigo-200/65">
-                  Whether you have an idea brewing, need business guidance, want
-                  to kick off a build, or request an audit,
-                </p>
-                <p className="text-xl text-indigo-200/65">
-                  or even want to talk about a racing seat (a dream never
-                  hurts).
-                </p>
-                <p className="text-xl text-indigo-200/65">
-                  {' '}
-                  I would be happy to hear from you.
-                </p>
+                {intro.map((paragraph, index) => (
+                  <p key={index} className="text-xl text-indigo-200/65">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
 
@@ -157,13 +164,13 @@ function ContactForm() {
                       className="mb-1 block text-sm font-medium text-indigo-200/65"
                       htmlFor="name"
                     >
-                      Name
+                      {fields.name.label}
                     </label>
                     <input
                       id="name"
                       type="text"
                       className="form-input w-full"
-                      placeholder="Your name"
+                      placeholder={fields.name.placeholder}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -176,13 +183,13 @@ function ContactForm() {
                       className="mb-1 block text-sm font-medium text-indigo-200/65"
                       htmlFor="email"
                     >
-                      Email
+                      {fields.email.label}
                     </label>
                     <input
                       id="email"
                       type="email"
                       className="form-input w-full"
-                      placeholder="Enter your email address"
+                      placeholder={fields.email.placeholder}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -195,7 +202,7 @@ function ContactForm() {
                       className="mb-1 block text-sm font-medium text-indigo-200/65"
                       htmlFor="topic"
                     >
-                      Topic
+                      {fields.topic.label}
                     </label>
                     <select
                       id="topic"
@@ -205,19 +212,13 @@ function ContactForm() {
                       required
                     >
                       <option value={'default'} disabled>
-                        Select a topic
+                        {fields.topic.placeholder}
                       </option>
-                      <option value="Feedback on an article">
-                        Feedback on an article
-                      </option>
-                      <option value="Web development project">
-                        Web development project
-                      </option>
-                      <option value="Remote management advice">
-                        Remote management advice
-                      </option>
-                      <option value="Racing">Racing</option>
-                      <option value="Other">Other</option>
+                      {topicOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="flex-1">
@@ -225,13 +226,13 @@ function ContactForm() {
                       className="mb-1 block text-sm font-medium text-indigo-200/65"
                       htmlFor="subject"
                     >
-                      Subject
+                      {fields.subject.label}
                     </label>
                     <input
                       id="subject"
                       type="text"
                       className="form-input w-full"
-                      placeholder="Let us know how we can help"
+                      placeholder={fields.subject.placeholder}
                       value={formData.subject}
                       onChange={handleChange}
                       required
@@ -243,14 +244,14 @@ function ContactForm() {
                     className="mb-1 block text-sm font-medium text-indigo-200/65"
                     htmlFor="description"
                   >
-                    Full description
+                    {fields.description.label}
                   </label>
                   <div className="relative">
                     <textarea
                       id="description"
                       rows={5}
                       className="form-textarea peer w-full text-gray-200 placeholder:text-transparent"
-                      placeholder="Share as many details as you can."
+                      placeholder={fields.description.placeholder}
                       value={formData.description}
                       onChange={handleChange}
                       required
@@ -259,7 +260,7 @@ function ContactForm() {
                       aria-hidden="true"
                       className="pointer-events-none absolute left-3 top-3 text-sm text-indigo-200/65 opacity-50 transition-opacity duration-150 peer-focus:opacity-0 peer-[&:not(:placeholder-shown)]:opacity-0"
                     >
-                      Share as many details as you can.
+                      {fields.description.placeholder}
                     </span>
                   </div>
                 </div>
@@ -272,7 +273,7 @@ function ContactForm() {
                     className="btn group w-full bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="relative inline-flex items-center">
-                      {isLoading ? 'Envoi en cours...' : 'Send'}
+                      {isLoading ? t('form.sending') : t('form.submit')}
                       {!isLoading && (
                         <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
                           -&gt;
@@ -283,25 +284,28 @@ function ContactForm() {
                 </div>
               </div>
               <div className="mt-4 text-center text-xs text-indigo-200/50">
-                This site is protected by reCAPTCHA and the Google{' '}
-                <a
-                  href="https://policies.google.com/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:no-underline"
-                >
-                  Privacy Policy
-                </a>{' '}
-                and{' '}
-                <a
-                  href="https://policies.google.com/terms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:no-underline"
-                >
-                  Terms of Service
-                </a>{' '}
-                apply.
+                {t.rich('recaptcha.text', {
+                  privacy: (chunks) => (
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:no-underline"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                  terms: (chunks) => (
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:no-underline"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
               </div>
             </form>
           </div>
