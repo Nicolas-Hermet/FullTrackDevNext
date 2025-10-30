@@ -1,9 +1,20 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import Logo from './logo';
 import FooterIllustration from '@/public/images/footer-illustration.svg';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+  const summary = t.raw('summary') as {
+    paragraphs: string[];
+    bullets: string[];
+  };
+  const sections = t.raw('sections') as { title: string; items: string[] }[];
+  const socialLabels = t.raw('socials') as Record<string, string>;
+  const copyright = t('copyright', {
+    year: new Date().getFullYear(),
+  });
+
   return (
     <footer className="mb-5">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -27,7 +38,7 @@ export default function Footer() {
               href="#0"
             >
               <span className="relative inline-flex items-center">
-                Contact
+                {t('ctaLabel')}
                 <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
                   -&gt;
                 </span>
@@ -35,187 +46,43 @@ export default function Footer() {
             </a>
           </div>
           <div className="text-sm text-center text-indigo-200/65">
-            <p>
-              Since 2018, Nicolas Hermet has supported startups and scale-ups in
-              systems engineering, then as a full-stack developer and tech lead.
-              Full Track Dev delivers product-focused tech engagements designed
-              to maximize ROI for your business and performance.
-            </p>
-            <p>Even when the team is fully remote.</p>
-            <p>
-              Recent engagements: functional architecture, retroactive time zone
-              reconciliation, and upskilling distributed teams.
-            </p>
+            {summary.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
             <ul className="space-y-1 text-sm text-indigo-200/65">
-              <li>Proven experience since 2010</li>
-              <li>Recent clients: Traacks, Captive, OFB</li>
+              {summary.bullets.map((bullet, index) => (
+                <li key={index}>{bullet}</li>
+              ))}
             </ul>
           </div>
         </div>
         <div className="grid grid-cols-2 justify-between gap-12 py-8 sm:grid-rows-[auto_auto] md:grid-cols-4 md:grid-rows-[auto_auto] md:py-12 lg:grid-cols-[repeat(4,minmax(0,140px))_1fr] lg:grid-rows-1 xl:gap-20">
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Freelance services
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Technical leadership &amp; product vision
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Full-stack Ruby on Rails &amp; Next.js development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Team workflow design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Team mentoring
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Fully remote leadership
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Tech stack &amp; expertise
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Ruby on Rails, RSpec, Sidekiq
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Next.js, TypeScript, Tailwind CSS
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  PostgreSQL, Redis, Docker
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Quality coaching, code reviews &amp; design patterns
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Tech versus business trade-offs
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Client case studies
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Axomove &mdash; digital health platform
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  ADN France &mdash; leading a fully remote team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Full Track Dev &mdash; technology migration
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Blog &amp; interests
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Motorsport &amp; a toolkit to strengthen team cohesion
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Remote organization &amp; leadership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Modern web development &amp; best practices
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {sections.map((section, index) => (
+            <div key={index} className="space-y-2">
+              <h3 className="text-sm font-medium text-gray-200">
+                {section.title}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <Link
+                      className="text-indigo-200/65 transition hover:text-indigo-500"
+                      href="#0"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           <div className="col-span-2 space-y-4 md:col-span-4 lg:col-span-1 lg:text-right">
             <ul className="inline-flex gap-4">
               <li>
                 <a
                   className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
                   href="https://www.linkedin.com/in/nicolas-hermet/"
-                  aria-label="Nicolas Hermet on LinkedIn, freelance developer"
+                  aria-label={socialLabels.linkedin}
                   rel="me"
                   target="_blank"
                 >
@@ -250,7 +117,7 @@ export default function Footer() {
                 <a
                   className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
                   href="https://github.com/nicolas-hermet"
-                  aria-label="Nicolas Hermet on GitHub, web projects"
+                  aria-label={socialLabels.github}
                   rel="me"
                   target="_blank"
                 >
@@ -269,7 +136,7 @@ export default function Footer() {
                 <a
                   className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
                   href="https://www.youtube.com/@FullTrackDev"
-                  aria-label="Nicolas Hermet on YouTube, tech talks &amp; videos"
+                  aria-label={socialLabels.youtube}
                   rel="me"
                   target="_blank"
                 >
@@ -286,8 +153,7 @@ export default function Footer() {
               </li>
             </ul>
             <p className="whitespace-pre-line text-sm text-end text-indigo-200/65">
-              {`© ${new Date().getFullYear()} Nicolas Hermet
-              All rights reserved.`}
+              {copyright}
             </p>
           </div>
         </div>

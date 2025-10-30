@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import { getBlogPosts } from '@/components/mdx/utils';
 import CategoryProvider from './category-provider';
 import PageIllustration from '@/components/page-illustration';
@@ -18,7 +19,9 @@ export default async function Blog({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'BlogPage' });
   const allBlogs = getBlogPosts(locale);
+  const description = t.raw('description') as string[];
 
   // Sort posts by date
   allBlogs.sort((a, b) =>
@@ -35,16 +38,14 @@ export default async function Blog({
             {/* Section header */}
             <div className="pb-12 text-center">
               <h1 className="animate-title pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-                Full Track Dev - Blog
+                {t('title')}
               </h1>
               <div className="mx-auto max-w-3xl">
-                <p className="text-xl text-indigo-200/65">
-                  I started writing during the various lockdowns, mostly about
-                  remote work. During my Formula Ford season, my main sponsor
-                  asked me to recap each race. Since then, blogging has become
-                  something I truly enjoy, and I share lessons here—personal and
-                  professional—across tech, remote work, and racing.
-                </p>
+                {description.map((paragraph, index) => (
+                  <p key={index} className="text-xl text-indigo-200/65">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
             <div>

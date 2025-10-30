@@ -2,9 +2,11 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function MobileMenu() {
+  const t = useTranslations('Header');
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 
   const trigger = useRef<HTMLButtonElement>(null);
@@ -46,7 +48,7 @@ export default function MobileMenu() {
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
-        <span className="sr-only">Menu</span>
+        <span className="sr-only">{t('nav.menu')}</span>
         <svg
           className="pointer-events-none fill-current"
           width={16}
@@ -111,7 +113,7 @@ export default function MobileMenu() {
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Blog
+                {t('nav.blog')}
               </Link>
             </li>
             {/* <li>
@@ -138,7 +140,7 @@ export default function MobileMenu() {
                 className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Contact me
+                {t('nav.contact')}
               </Link>
             </li>
             {/* <li>

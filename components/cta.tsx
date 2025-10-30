@@ -1,8 +1,11 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import BlurredShape from '@/public/images/blurred-shape.svg';
 import CvButton from './cv-button';
 
 export default function Cta() {
+  const t = useTranslations('Cta');
+
   return (
     <section className="relative overflow-hidden">
       <div
@@ -25,13 +28,13 @@ export default function Cta() {
               data-aos="fade-up"
               data-aos-delay={200}
             >
-              Curious about what you read here?
+              {t('subtitle')}
             </p>
             <h2
               className="animate-title pb-8 font-nacelle text-3xl font-semibold text-transparent md:text-4xl"
               data-aos="fade-up"
             >
-              Let’s work together
+              {t('title')}
             </h2>
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
               <div data-aos="fade-up" data-aos-delay={400}>
@@ -40,7 +43,7 @@ export default function Cta() {
                   href="#0"
                 >
                   <span className="relative inline-flex items-center">
-                    Get in touch
+                    {t('ctaButton')}
                     <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
                       -&gt;
                     </span>

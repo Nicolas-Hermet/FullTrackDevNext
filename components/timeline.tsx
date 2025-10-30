@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import CvButton from '@/components/cv-button';
 
 type TimelineSide = 'left' | 'right';
@@ -19,125 +20,14 @@ type TimelineYear = {
   right?: TimelineEntry;
 };
 
-const timelineYears: TimelineYear[] = [
-  {
-    year: '2010 - 2016',
-    left: {
-      eyebrow: 'Aeronautical Engineering',
-      title: 'Project and Team Manager',
-      description: `Project and systems engineer with end-to-end experience across the aerospace lifecycle—from flight testing to model-based systems engineering (MBSE).\n
-        Contributed to major programs (A350, avionics systems, Silvercrest turbines) with a dual technical and managerial background spanning project leadership, quality management, and international team coordination.`,
-    },
-    right: {
-      eyebrow: 'SWS',
-      title: 'World Go-Kart Endurance Championship',
-      description: `2015: Finished 30th out of 3,424 teams
-      2016: Finished 10th out of 3,424 teams`,
-      stack: 'Sodi RT8, RX, SRT',
-      aosDelay: 200,
-    },
-  },
-  {
-    year: '2016-2018',
-    left: {
-      eyebrow: '',
-      title: 'Entrepreneurial experiments',
-      description: `I attempted to launch several startups in the tourism and art space. Learned a lot, failed fast.
-        That's when I discovered my passion for coding through The Hacking Project Bootcamp.`,
-      aosDelay: 200,
-    },
-  },
-  {
-    year: '2018 - 2020',
-    left: {
-      eyebrow: 'ADN France (fully remote)',
-      title: 'Team Lead & Software Engineer',
-      description: `Built backend features for a low-voltage cabling management platform.
-        Led the migration from Flash to Angular.
-        Managed the project and led a four-developer team.
-        Scaled the team's throughput 12x by redesigning workflows.`,
-      stack: 'Angular 6.x-8.x',
-      aosDelay: 300,
-    },
-  },
-  {
-    year: '2021',
-    left: {
-      eyebrow: 'Cardiologs (fully remote)',
-      title: 'Software Engineer',
-      description: `Served as a backend engineer for a medical startup focused on diagnosing heart conditions from ECG data.
-            Implemented new endpoints to integrate ECG data with Apple Health.`,
-      stack:
-        'Ruby on Rails 6.x API, RSpec, Docker, Jenkins, Sidekiq, PostgreSQL.',
-      aosDelay: 300,
-    },
-    right: {
-      eyebrow: 'Volant Michel Vaillant x Yéma',
-      title: 'Volant winner',
-      description: `Named the winner after three days of intensive training by a jury of 24 Hours of Le Mans champions.`,
-      stack: 'Crosslé 90F',
-      aosDelay: 500,
-    },
-  },
-  {
-    year: '2021',
-    left: {
-      eyebrow: 'Full Track Dev launch!',
-      title: 'Fullstack Software Engineer',
-      description: `Delivered engagements for several clients.
-            Mentored interns and apprentices.
-            Refactored test suites to raise coverage from 40\% to 80\%.`,
-      stack:
-        'Ruby on Rails 5.2-8.x, RSpec, Vanilla JS, PostgreSQL, Docker, Github Actions, Next.js, Angular, Vue.js.',
-      aosDelay: 600,
-    },
-  },
-  {
-    year: '2021 - 2024',
-    left: {
-      eyebrow: 'Axomove (fully remote)',
-      title: 'Tech Lead',
-      description: `Managed and mentored a four-person team.
-            Taught design patterns, OOP principles, and engineering best practices.
-            Designed the platform architecture.
-            Implemented CI/CD pipelines.
-            Introduced testing best practices with RSpec.
-            Increased automated test coverage from 10\% to 60\%.
-            Secured and handled sensitive medical data.`,
-      stack:
-        'Ruby on Rails 5.2-6.1, RSpec, Vanilla JS, Github Actions, PostgreSQL, Git.',
-      aosDelay: 800,
-    },
-    right: {
-      eyebrow: 'HVM Historic Tour',
-      title: 'French Historic Formula Ford Championship',
-      description:
-        'Finished 4th overall despite running only 30% of the races. 71% podium rate.',
-      stack: 'Lotus 69, Crosslé 16F',
-      aosDelay: 1000,
-    },
-  },
-  {
-    year: '2024',
-    left: {
-      eyebrow: 'Lisaia (fully remote)',
-      title: 'Fullstack Software Engineer',
-      description: `Served as a fullstack engineer for a medical startup streamlining communication between doctors and patients.
-            Owned web application features end to end.
-            Safeguarded sensitive medical data.`,
-      stack:
-        'Ruby on Rails 7.1, RSpec, Stimulus, Sidekiq, Github Actions, PostgreSQL, Redis.',
-      aosDelay: 1200,
-    },
-  },
-];
-
 function TimelineContent({
   entry,
   align,
+  labels,
 }: {
   entry: TimelineEntry;
   align: TimelineSide;
+  labels: { stack: string; cars: string };
 }) {
   const isLeft = align === 'left';
   const spacingClass = isLeft ? 'md:pr-12' : 'md:pl-12';
@@ -165,7 +55,7 @@ function TimelineContent({
             {entry.stack && (
               <>
                 <span className="text-indigo-200/65 mr-4">
-                  {align === 'left' ? 'Stack: ' : 'Cars: '}
+                  {align === 'left' ? labels.stack : labels.cars}
                 </span>
                 <span className="bg-linear-to-r from-red-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
                   {entry.stack}
@@ -180,6 +70,11 @@ function TimelineContent({
 }
 
 export default function Timeline() {
+  const t = useTranslations('Timeline');
+  const timelineYears = t.raw('years') as TimelineYear[];
+  const leadParagraphs = t.raw('lead') as string[];
+  const labels = t.raw('labels') as { stack: string; cars: string };
+
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [showCvButton, setShowCvButton] = useState(false);
 
@@ -239,16 +134,13 @@ export default function Timeline() {
 
             <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
               <h2 className="animate-title pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-                {/* En anglais: j'apporte une solution technique à votre problème business */}
-                I build tools to solve real-world problems
+                {t('title')}
               </h2>
-              <p className="text-lg text-indigo-200/65">
-                In racing, as in web development or engineering, I always strive
-                for the best.
-              </p>
-              <p className="text-lg text-indigo-200/65">
-                Always pushing to be better every day.
-              </p>
+              {leadParagraphs.map((paragraph, index) => (
+                <p key={index} className="text-lg text-indigo-200/65">
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             <div
@@ -280,7 +172,11 @@ export default function Timeline() {
                       <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-10">
                         <div className="hidden md:block">
                           {year.left ? (
-                            <TimelineContent entry={year.left} align="left" />
+                            <TimelineContent
+                              entry={year.left}
+                              align="left"
+                              labels={labels}
+                            />
                           ) : (
                             <div aria-hidden="true" />
                           )}
@@ -294,7 +190,11 @@ export default function Timeline() {
 
                         <div className="hidden md:block">
                           {year.right ? (
-                            <TimelineContent entry={year.right} align="right" />
+                            <TimelineContent
+                              entry={year.right}
+                              align="right"
+                              labels={labels}
+                            />
                           ) : (
                             <div aria-hidden="true" />
                           )}
@@ -302,10 +202,18 @@ export default function Timeline() {
 
                         <div className="space-y-6 md:hidden">
                           {year.left && (
-                            <TimelineContent entry={year.left} align="left" />
+                            <TimelineContent
+                              entry={year.left}
+                              align="left"
+                              labels={labels}
+                            />
                           )}
                           {year.right && (
-                            <TimelineContent entry={year.right} align="right" />
+                            <TimelineContent
+                              entry={year.right}
+                              align="right"
+                              labels={labels}
+                            />
                           )}
                         </div>
                       </div>
