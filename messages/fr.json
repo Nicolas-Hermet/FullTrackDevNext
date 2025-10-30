@@ -7,44 +7,44 @@
   },
   "HeroAbout": {
     "title": "Full Track Dev",
-    "subtitle": "An humble Fullstack Software Engineer driving racing cars on tracks.",
-    "tagline": "And who gets shit done for you."
+    "subtitle": "Un ingénieur logiciel full stack qui pilote des voitures de course sur circuit.",
+    "tagline": "Et qui fait avancer vos projets."
   },
   "LatestPosts": {
-    "eyebrow": "Cutting edges thoughts",
-    "title": "My last blog posts",
-    "description": "I mostly write about tech, remote workflows and racing. Here my last thoughts on those topics"
+    "eyebrow": "Réflexions pointues",
+    "title": "Mes derniers articles",
+    "description": "J’écris surtout sur la tech, les workflows à distance et le sport auto. Voici mes dernières réflexions sur ces sujets."
   },
   "Cta": {
-    "subtitle": "Curious about what you read here?",
-    "title": "Let’s work together",
-    "ctaButton": "Get in touch"
+    "subtitle": "Curieux de ce que vous venez de lire ?",
+    "title": "Collaborons ensemble",
+    "ctaButton": "Entrons en contact"
   },
   "CvButton": {
-    "label": "See my resume"
+    "label": "Voir mon CV"
   },
   "Timeline": {
-    "title": "I build tools to solve real-world problems",
+    "title": "Je conçois des outils pour résoudre des problèmes concrets",
     "lead": [
-      "In racing, as in web development or engineering, I always strive for the best.",
-      "Always pushing to be better every day."
+      "Sur circuit comme en développement ou en ingénierie, je vise toujours le meilleur.",
+      "Je progresse un peu plus chaque jour."
     ],
     "labels": {
-      "stack": "Stack: ",
-      "cars": "Cars: "
+      "stack": "Stack : ",
+      "cars": "Voitures : "
     },
     "years": [
       {
         "year": "2010 - 2016",
         "left": {
-          "eyebrow": "Aeronautical Engineering",
-          "title": "Project and Team Manager",
-          "description": "Project and systems engineer with end-to-end experience across the aerospace lifecycle—from flight testing to model-based systems engineering (MBSE).\nContributed to major programs (A350, avionics systems, Silvercrest turbines) with a dual technical and managerial background spanning project leadership, quality management, and international team coordination."
+          "eyebrow": "Ingénieur aéronautique",
+          "title": "Chef de projet et manager d’équipe",
+          "description": "Ingénieur projet et systèmes sur l’intégralité du cycle de vie aéronautique : essais en vol, intégration avionique, MBSE.\nContribution à de grands programmes (A350, systèmes avioniques, turbines Silvercrest) avec un double profil technique et management : pilotage projet, qualité et coordination d’équipes internationales."
         },
         "right": {
           "eyebrow": "SWS",
-          "title": "World Go-Kart Endurance Championship",
-          "description": "2015: Finished 30th out of 3,424 teams\n2016: Finished 10th out of 3,424 teams",
+          "title": "Championnat du monde d’endurance karting",
+          "description": "2015 : 30e sur 3 424 équipes\n2016 : 10e sur 3 424 équipes",
           "stack": "Sodi RT8, RX, SRT",
           "aosDelay": 200
         }
@@ -53,17 +53,17 @@
         "year": "2016-2018",
         "left": {
           "eyebrow": "",
-          "title": "Entrepreneurial experiments",
-          "description": "I attempted to launch several startups in the tourism and art space. Learned a lot, failed fast.\nThat's when I discovered my passion for coding through The Hacking Project Bootcamp.",
+          "title": "Projets entrepreneuriaux",
+          "description": "Plusieurs tentatives de start-up dans le tourisme et l’art. Beaucoup d’apprentissages, échecs rapides.\nC’est là que je découvre ma passion pour le code via le bootcamp The Hacking Project.",
           "aosDelay": 200
         }
       },
       {
         "year": "2018 - 2020",
         "left": {
-          "eyebrow": "ADN France (fully remote)",
+          "eyebrow": "ADN France (full remote)",
           "title": "Team Lead & Software Engineer",
-          "description": "Built backend features for a low-voltage cabling management platform.\nLed the migration from Flash to Angular.\nManaged the project and led a four-developer team.\nScaled the team's throughput 12x by redesigning workflows.",
+          "description": "Développement backend pour une plateforme de gestion de câblage basse tension.\nPilotage de la migration Flash vers Angular.\nGestion de projet et encadrement d’une équipe de quatre développeurs.\nProductivité multipliée par 12 grâce à la refonte des workflows.",
           "stack": "Angular 6.x-8.x",
           "aosDelay": 300
         }
@@ -71,16 +71,16 @@
       {
         "year": "2021",
         "left": {
-          "eyebrow": "Cardiologs (fully remote)",
+          "eyebrow": "Cardiologs (full remote)",
           "title": "Software Engineer",
-          "description": "Served as a backend engineer for a medical startup focused on diagnosing heart conditions from ECG data.\nImplemented new endpoints to integrate ECG data with Apple Health.",
+          "description": "Ingénierie backend pour une medtech dédiée au diagnostic cardiaque à partir d’ECG.\nCréation d’API pour intégrer les données ECG dans Apple Health.",
           "stack": "Ruby on Rails 6.x API, RSpec, Docker, Jenkins, Sidekiq, PostgreSQL.",
           "aosDelay": 300
         },
         "right": {
           "eyebrow": "Volant Michel Vaillant x Yéma",
-          "title": "Volant winner",
-          "description": "Named the winner after three days of intensive training by a jury of 24 Hours of Le Mans champions.",
+          "title": "Vainqueur du Volant Michel Vaillant",
+          "description": "Sacré vainqueur après trois jours d’entraînement intensif par un jury composé de vainqueurs des 24 Heures du Mans.",
           "stack": "Crosslé 90F",
           "aosDelay": 500
         }
@@ -88,9 +88,9 @@
       {
         "year": "2021",
         "left": {
-          "eyebrow": "Full Track Dev launch!",
+          "eyebrow": "Lancement de Full Track Dev !",
           "title": "Fullstack Software Engineer",
-          "description": "Delivered engagements for several clients.\nMentored interns and apprentices.\nRefactored test suites to raise coverage from 40% to 80%.",
+          "description": "Missions pour plusieurs clients.\nMentorat de stagiaires et alternants.\nRefonte des suites de tests : couverture portée de 40 % à 80 %.",
           "stack": "Ruby on Rails 5.2-8.x, RSpec, Vanilla JS, PostgreSQL, Docker, Github Actions, Next.js, Angular, Vue.js.",
           "aosDelay": 600
         }
@@ -98,16 +98,16 @@
       {
         "year": "2021 - 2024",
         "left": {
-          "eyebrow": "Axomove (fully remote)",
+          "eyebrow": "Axomove (full remote)",
           "title": "Tech Lead",
-          "description": "Managed and mentored a four-person team.\nTaught design patterns, OOP principles, and engineering best practices.\nDesigned the platform architecture.\nImplemented CI/CD pipelines.\nIntroduced testing best practices with RSpec.\nIncreased automated test coverage from 10% to 60%.\nSecured and handled sensitive medical data.",
+          "description": "Management et mentoring d’une équipe de quatre personnes.\nTransmission de design patterns, principes OO et bonnes pratiques d’ingénierie.\nConception de l’architecture de la plateforme.\nMise en place des pipelines CI/CD.\nDéploiement des bonnes pratiques de test avec RSpec.\nCouverture automatisée portée de 10 % à 60 %.\nGestion sécurisée de données médicales sensibles.",
           "stack": "Ruby on Rails 5.2-6.1, RSpec, Vanilla JS, Github Actions, PostgreSQL, Git.",
           "aosDelay": 800
         },
         "right": {
           "eyebrow": "HVM Historic Tour",
-          "title": "French Historic Formula Ford Championship",
-          "description": "Finished 4th overall despite running only 30% of the races. 71% podium rate.",
+          "title": "Championnat de France Historic Formula Ford",
+          "description": "4e au général malgré seulement 30 % de participation. 71 % de podiums.",
           "stack": "Lotus 69, Crosslé 16F",
           "aosDelay": 1000
         }
@@ -115,9 +115,9 @@
       {
         "year": "2024",
         "left": {
-          "eyebrow": "Lisaia (fully remote)",
+          "eyebrow": "Lisaia (full remote)",
           "title": "Fullstack Software Engineer",
-          "description": "Served as a fullstack engineer for a medical startup streamlining communication between doctors and patients.\nOwned web application features end to end.\nSafeguarded sensitive medical data.",
+          "description": "Full stack engineer pour une medtech qui fluidifie la communication médecin-patient.\nResponsabilité end-to-end des fonctionnalités web.\nProtection de données médicales sensibles.",
           "stack": "Ruby on Rails 7.1, RSpec, Stimulus, Sidekiq, Github Actions, PostgreSQL, Redis.",
           "aosDelay": 1200
         }
@@ -125,24 +125,24 @@
     ]
   },
   "BlogPage": {
-    "title": "Full Track Dev - Blog",
+    "title": "Full Track Dev — Blog",
     "description": [
-      "I started writing during the various lockdowns, mostly about remote work. During my Formula Ford season, my main sponsor asked me to recap each race. Since then, blogging has become something I truly enjoy, and I share lessons here—personal and professional—across tech, remote work, and racing."
+      "J’ai commencé à écrire pendant les confinements, surtout sur le travail à distance. Durant ma saison de Formule Ford, mon sponsor principal m’a demandé de résumer chaque course. Depuis, le blogging est devenu un plaisir, et je partage ici des retours d’expérience personnels et professionnels autour de la tech, du remote et du sport auto."
     ]
   },
   "BlogFilters": {
     "filters": {
-      "all": "View All",
+      "all": "Tout voir",
       "remote": "Remote",
       "racing": "Racing",
-      "personal": "Personnal",
+      "personal": "Personnel",
       "engineering": "Engineering"
     }
   },
   "Header": {
     "nav": {
       "blog": "Blog",
-      "contact": "Contact me",
+      "contact": "Contact",
       "menu": "Menu"
     }
   },
@@ -150,125 +150,125 @@
     "ctaLabel": "Contact",
     "summary": {
       "paragraphs": [
-        "Since 2018, Nicolas Hermet has supported startups and scale-ups in systems engineering, then as a full-stack developer and tech lead. Full Track Dev delivers product-focused tech engagements designed to maximize ROI for your business and performance.",
-        "Even when the team is fully remote.",
-        "Recent engagements: functional architecture, retroactive time zone reconciliation, and upskilling distributed teams."
+        "Depuis 2018, Nicolas Hermet accompagne startups et scale-ups : d’abord en ingénierie systèmes, puis comme développeur full stack et tech lead. Full Track Dev conçoit des missions centrées produit pour maximiser la valeur et la performance de votre équipe.",
+        "Même à 100 % à distance.",
+        "Exemples récents : architecture fonctionnelle, rattrapage de fuseaux horaires et montée en compétence d’équipes distribuées."
       ],
       "bullets": [
-        "Proven experience since 2010",
-        "Recent clients: Traacks, Captive, OFB"
+        "Expérience prouvée depuis 2010",
+        "Clients récents : Traacks, Captive, OFB"
       ]
     },
     "sections": [
       {
-        "title": "Freelance services",
+        "title": "Prestations freelance",
         "items": [
-          "Technical leadership & product vision",
-          "Full-stack Ruby on Rails & Next.js development",
-          "Team workflow design",
-          "Team mentoring",
-          "Fully remote leadership"
+          "Direction technique & vision produit",
+          "Développement full stack Ruby on Rails & Next.js",
+          "Conception de workflows d’équipe",
+          "Mentorat d’équipe",
+          "Pilotage d’équipe 100 % remote"
         ]
       },
       {
-        "title": "Tech stack & expertise",
+        "title": "Stack & expertises",
         "items": [
           "Ruby on Rails, RSpec, Sidekiq",
           "Next.js, TypeScript, Tailwind CSS",
           "PostgreSQL, Redis, Docker",
-          "Quality coaching, code reviews & design patterns",
-          "Tech versus business trade-offs"
+          "Coaching qualité, revues de code & design patterns",
+          "Arbitrages tech / business"
         ]
       },
       {
-        "title": "Client case studies",
+        "title": "Études de cas clients",
         "items": [
-          "Axomove — digital health platform",
-          "ADN France — leading a fully remote team",
-          "Full Track Dev — technology migration"
+          "Axomove — plateforme de santé digitale",
+          "ADN France — pilotage d’une équipe full remote",
+          "Full Track Dev — migration technologique"
         ]
       },
       {
-        "title": "Blog & interests",
+        "title": "Blog & centres d’intérêt",
         "items": [
-          "Motorsport & a toolkit to strengthen team cohesion",
-          "Remote organization & leadership",
-          "Modern web development & best practices"
+          "Motorsport & cohésion d’équipe",
+          "Organisation à distance & leadership",
+          "Développement web moderne & bonnes pratiques"
         ]
       }
     ],
     "socials": {
-      "linkedin": "Nicolas Hermet on LinkedIn, freelance developer",
-      "github": "Nicolas Hermet on GitHub, web projects",
-      "youtube": "Nicolas Hermet on YouTube, tech talks & videos"
+      "linkedin": "Nicolas Hermet sur LinkedIn, développeur freelance",
+      "github": "Nicolas Hermet sur GitHub, projets web",
+      "youtube": "Nicolas Hermet sur YouTube, talks & vidéos tech"
     },
-    "copyright": "© {year} Nicolas Hermet\nAll rights reserved."
+    "copyright": "© {year} Nicolas Hermet\nTous droits réservés."
   },
   "Contact": {
-    "title": "Contact Me",
+    "title": "Contactez-moi",
     "intro": [
-      "Whether you have an idea brewing, need business guidance, want to kick off a build, or request an audit,",
-      "or even want to talk about a racing seat (a dream never hurts).",
-      " I would be happy to hear from you."
+      "Que vous ayez une idée à concrétiser, besoin d’un conseil business, l’envie de lancer un produit ou de demander un audit,",
+      "ou même de discuter d’un baquet en course (il faut toujours rêver).",
+      "Je serai ravi d’échanger avec vous."
     ],
     "form": {
       "fields": {
         "name": {
-          "label": "Name",
-          "placeholder": "Your name"
+          "label": "Nom",
+          "placeholder": "Votre nom"
         },
         "email": {
           "label": "Email",
-          "placeholder": "Enter your email address"
+          "placeholder": "Votre adresse email"
         },
         "topic": {
-          "label": "Topic",
-          "placeholder": "Select a topic"
+          "label": "Sujet",
+          "placeholder": "Choisissez un sujet"
         },
         "subject": {
-          "label": "Subject",
-          "placeholder": "Let us know how we can help"
+          "label": "Objet",
+          "placeholder": "Expliquez-nous comment aider"
         },
         "description": {
-          "label": "Full description",
-          "placeholder": "Share as many details as you can."
+          "label": "Description détaillée",
+          "placeholder": "Donnez un maximum de détails."
         }
       },
       "topic": {
         "options": [
           {
-            "value": "Feedback on an article",
-            "label": "Feedback on an article"
+            "value": "Retour sur un article",
+            "label": "Retour sur un article"
           },
           {
-            "value": "Web development project",
-            "label": "Web development project"
+            "value": "Projet de développement web",
+            "label": "Projet de développement web"
           },
           {
-            "value": "Remote management advice",
-            "label": "Remote management advice"
+            "value": "Conseil en management à distance",
+            "label": "Conseil en management à distance"
           },
           {
             "value": "Racing",
             "label": "Racing"
           },
           {
-            "value": "Other",
-            "label": "Other"
+            "value": "Autre",
+            "label": "Autre"
           }
         ]
       },
-      "submit": "Send",
+      "submit": "Envoyer",
       "sending": "Envoi en cours..."
     },
     "errors": {
       "missingFields": "Veuillez remplir tous les champs.",
-      "recaptchaNotReady": "reCAPTCHA not ready. Please try again.",
+      "recaptchaNotReady": "reCAPTCHA n’est pas encore prêt. Merci de réessayer.",
       "generic": "Une erreur est survenue. Veuillez réessayer."
     },
     "success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
     "recaptcha": {
-      "text": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply."
+      "text": "Ce site est protégé par reCAPTCHA ; les <privacy>règles de confidentialité</privacy> et les <terms>conditions d’utilisation</terms> de Google s’appliquent."
     }
   }
 }
