@@ -4,6 +4,7 @@ import path from 'path';
 type Metadata = {
   title: string;
   summary?: string;
+  published: string;
   publishedAt: string;
   updatedAt?: string;
   image?: string;
@@ -69,6 +70,9 @@ export function getBlogPosts(locale: string = 'fr') {
 
   // Get posts from the requested locale
   const localePosts = getMDXData(localeDir);
+  const publishedLocalePosts = localePosts.filter(
+    (post) => post.metadata.published === 'true'
+  );
 
   // If locale is 'fr' or we have posts, return them
   if (locale === 'fr' || localePosts.length > 0) {
@@ -79,13 +83,14 @@ export function getBlogPosts(locale: string = 'fr') {
 
       // Add missing posts from fallback (fr)
       const missingPosts = fallbackPosts.filter(
-        (post) => !localeSlugs.has(post.slug)
+        (post) =>
+          !localeSlugs.has(post.slug) && post.metadata.published === 'false'
       );
 
-      return [...localePosts, ...missingPosts];
+      return [...publishedLocalePosts, ...missingPosts];
     }
 
-    return localePosts;
+    return publishedLocalePosts;
   }
 
   // Fallback to French if locale directory doesn't exist or is empty
