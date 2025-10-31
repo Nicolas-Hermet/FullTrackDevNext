@@ -1,13 +1,13 @@
 {
   "HeroHome": {
     "title": "Full Track Dev",
-    "subtitle": "An humble Fullstack Software Engineer driving racing cars on tracks.",
+    "subtitle": "A humble Fullstack Software Engineer driving racing cars on tracks.",
     "tagline": "And who gets shit done for you.",
     "contactButton": "Contact"
   },
   "HeroAbout": {
     "title": "Full Track Dev",
-    "subtitle": "An humble Fullstack Software Engineer driving racing cars on tracks.",
+    "subtitle": "A humble Fullstack Software Engineer driving racing cars on tracks.",
     "tagline": "And who gets shit done for you."
   },
   "LatestPosts": {
@@ -52,7 +52,7 @@
       {
         "year": "2016-2018",
         "left": {
-          "eyebrow": "",
+          "eyebrow": "Tourismatic ; Kyllt.",
           "title": "Entrepreneurial projects",
           "description": "I attempted to launch several startups in the tourism and art space. Learned a lot, failed fast.\nThat's when I discovered my passion for coding through The Hacking Project Bootcamp.",
           "aosDelay": 200
@@ -259,14 +259,14 @@
         ]
       },
       "submit": "Send",
-      "sending": "Envoi en cours..."
+      "sending": "Sending..."
     },
     "errors": {
-      "missingFields": "Veuillez remplir tous les champs.",
+      "missingFields": "Please fill every field.",
       "recaptchaNotReady": "reCAPTCHA not ready. Please try again.",
-      "generic": "Une erreur est survenue. Veuillez réessayer."
+      "generic": "An error occurred. Please try again."
     },
-    "success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
+    "success": "Message sent successfully! I will get back to you soon.",
     "recaptcha": {
       "text": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply."
     }
