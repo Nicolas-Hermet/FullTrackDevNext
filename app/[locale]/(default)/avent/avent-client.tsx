@@ -70,6 +70,20 @@ export default function AventClient({
     []
   );
 
+  const rows = useMemo(
+    () => [
+      [1],
+      [2, 3],
+      [4, 5, 6],
+      [7, 8, 9, 10],
+      [11, 12, 13, 14, 15],
+      [16, 17, 18, 19, 20, 21],
+      [22, 23, 24],
+      [25],
+    ],
+    []
+  );
+
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   const initialEditDay =
@@ -103,32 +117,42 @@ export default function AventClient({
         </p>
       </header>
 
-      <section className="grid grid-cols-3 gap-3 md:grid-cols-6">
-        {days.map((day) => {
-          const available = canViewDay(day, today, role);
-          const isSelected = selectedDay === day;
+      <section className="space-y-2">
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex justify-center gap-2">
+            {row.map((day) => {
+              const available = canViewDay(day, today, role);
+              const isSelected = selectedDay === day;
 
-          return (
-            <button
-              key={day}
-              type="button"
-              disabled={!available}
-              onClick={() => {
-                if (!available) return;
-                setSelectedDay(day);
-              }}
-              className={[
-                'flex h-20 items-center justify-center rounded-md border text-lg font-semibold transition-colors',
-                available
-                  ? 'border-indigo-500/60 bg-indigo-500/10 text-indigo-100 hover:bg-indigo-500/20'
-                  : 'cursor-not-allowed border-gray-700 bg-gray-900/60 text-gray-500',
-                isSelected ? 'ring-2 ring-indigo-400' : '',
-              ].join(' ')}
-            >
-              {day}
-            </button>
-          );
-        })}
+              return (
+                <button
+                  key={day}
+                  type="button"
+                  disabled={!available}
+                  onClick={() => {
+                    if (!available) return;
+                    setSelectedDay(day);
+                  }}
+                  className={[
+                    'flex h-16 w-12 items-center justify-center rounded-md border text-lg font-semibold transition-colors md:h-20 md:w-16',
+                    day === 25
+                      ? 'border-amber-400/80 bg-amber-500/20 text-amber-100'
+                      : '',
+                    available && day !== 25
+                      ? 'border-indigo-500/60 bg-indigo-500/10 text-indigo-100 hover:bg-indigo-500/20'
+                      : '',
+                    !available
+                      ? 'cursor-not-allowed border-gray-700 bg-gray-900/60 text-gray-500'
+                      : '',
+                    isSelected ? 'ring-2 ring-indigo-400' : '',
+                  ].join(' ')}
+                >
+                  {day}
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </section>
 
       <section className="space-y-2 rounded-md border border-gray-800 bg-gray-900/60 p-4">
