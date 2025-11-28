@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import type { AventMessages } from './storage';
-import { saveAventMessage } from './actions';
+import { saveAventMessage, unlockDay25 } from './actions';
 
 type AventRole = 'user1' | 'user2';
 
@@ -12,6 +12,7 @@ type AventClientProps = {
   messages: AventMessages;
   locale: string;
   role: AventRole;
+  day25Unlocked: boolean;
 };
 
 function isDayAvailable(day: number, today: Date) {
@@ -19,12 +20,18 @@ function isDayAvailable(day: number, today: Date) {
   // If you want a different rule later, it's easy to adjust here.
   const year = today.getFullYear();
   const unlockDate = new Date(year, 11, day, 0, 0, 0, 0); // month 11 = December
+  return true;
   return today >= unlockDate;
 }
 
 function canViewDay(day: number, today: Date, role: AventRole) {
   if (!isDayAvailable(day, today)) {
     return false;
+  }
+
+  // Le 25 doit être visible pour les deux utilisateurs
+  if (day === 25) {
+    return true;
   }
 
   const isEvenDay = day % 2 === 0;
@@ -55,6 +62,7 @@ export default function AventClient({
   messages,
   locale,
   role,
+  day25Unlocked,
 }: AventClientProps) {
   const today = useMemo(() => new Date(todayISO), [todayISO]);
   const days = useMemo(
@@ -124,11 +132,43 @@ export default function AventClient({
       </section>
 
       <section className="space-y-2 rounded-md border border-gray-800 bg-gray-900/60 p-4">
-        <h2 className="text-lg font-medium">Aujourd'hui !</h2>
+        <h2 className="text-lg font-medium">Aujourd&apos;hui !</h2>
         {selectedDay == null ? (
           <p className="text-sm text-gray-400">
             Sélectionnez une case disponible pour afficher son contenu.
           </p>
+        ) : selectedDay === 25 && !day25Unlocked ? (
+          <div className="space-y-3">
+            <p className="text-sm text-gray-400">
+              Pour le 25e jour, les deux mots de passe sont requis. Saisissez le
+              mot de passe de l&apos;autre personne pour dévoiler le message.
+            </p>
+            <form action={unlockDay25} className="space-y-2">
+              <input type="hidden" name="locale" value={locale} />
+              <div className="space-y-1">
+                <label
+                  className="text-sm font-medium text-gray-200"
+                  htmlFor="password-other"
+                >
+                  Mot de passe de l&apos;autre personne
+                </label>
+                <input
+                  id="password-other"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="w-full rounded-md border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-gray-100"
+                />
+              </div>
+              <button
+                type="submit"
+                className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400"
+              >
+                Débloquer le 25e jour
+              </button>
+            </form>
+          </div>
         ) : selectedMessage ? (
           <div className="whitespace-pre-wrap text-sm leading-relaxed">
             {selectedMessage}
