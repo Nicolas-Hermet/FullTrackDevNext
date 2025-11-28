@@ -1,57 +1,76 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import { createClient } from 'redis';
 
 export type AventMessages = Record<number, string>;
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const DATA_FILE = path.join(DATA_DIR, 'avent-messages.json');
+const AVENT_MESSAGES_KEY = 'avent:messages';
 
-async function ensureDataFile() {
-  await fs.mkdir(DATA_DIR, { recursive: true });
+type RedisClient = ReturnType<typeof createClient>;
 
-  try {
-    await fs.access(DATA_FILE);
-  } catch {
-    await fs.writeFile(DATA_FILE, JSON.stringify({}, null, 2), 'utf8');
+let redisClient: RedisClient | null = null;
+let redisInitPromise: Promise<RedisClient> | null = null;
+
+async function getRedisClient(): Promise<RedisClient> {
+  if (redisClient && redisClient.isOpen) {
+    return redisClient;
   }
+
+  if (!redisInitPromise) {
+    redisInitPromise = (async () => {
+      const client = createClient({
+        url: process.env.REDIS_URL,
+      });
+
+      client.on('error', (error) => {
+        console.error('Redis client error:', error);
+      });
+
+      await client.connect();
+      redisClient = client;
+      return client;
+    })();
+  }
+
+  return redisInitPromise;
 }
 
 export async function readAventMessages(): Promise<AventMessages> {
-  try {
-    await ensureDataFile();
-    const content = await fs.readFile(DATA_FILE, 'utf8');
+  const client = await getRedisClient();
+  const raw = await client.get(AVENT_MESSAGES_KEY);
 
-    if (!content) {
-      return {};
-    }
-
-    const parsed = JSON.parse(content) as AventMessages;
-
-    // Normalize keys to numbers just in case
-    const normalized: AventMessages = {};
-    for (const [key, value] of Object.entries(parsed)) {
-      const day = Number(key);
-      if (
-        Number.isInteger(day) &&
-        day >= 1 &&
-        day <= 25 &&
-        typeof value === 'string'
-      ) {
-        normalized[day] = value;
-      }
-    }
-
-    return normalized;
-  } catch (error) {
-    console.error('Error reading Avent messages file:', error);
+  if (!raw) {
     return {};
   }
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw) as AventMessages;
+  } catch {
+    console.error('Failed to parse Avent messages from Redis, resetting.');
+    return {};
+  }
+
+  const normalized: AventMessages = {};
+  for (const [key, value] of Object.entries(
+    parsed as Record<string, unknown>
+  )) {
+    const day = Number(key);
+    if (
+      Number.isInteger(day) &&
+      day >= 1 &&
+      day <= 25 &&
+      typeof value === 'string'
+    ) {
+      normalized[day] = value;
+    }
+  }
+
+  return normalized;
 }
 
 export async function writeAventMessages(
   messages: AventMessages
 ): Promise<void> {
-  await ensureDataFile();
+  const client = await getRedisClient();
 
   const safeMessages: AventMessages = {};
   for (const [key, value] of Object.entries(messages)) {
@@ -66,7 +85,7 @@ export async function writeAventMessages(
     }
   }
 
-  await fs.writeFile(DATA_FILE, JSON.stringify(safeMessages, null, 2), 'utf8');
+  await client.set(AVENT_MESSAGES_KEY, JSON.stringify(safeMessages));
 }
 
 export async function upsertAventMessage(
@@ -77,7 +96,6 @@ export async function upsertAventMessage(
     throw new Error('Invalid day for Avent message');
   }
 
-  await ensureDataFile();
   const current = await readAventMessages();
 
   const updated: AventMessages = {
