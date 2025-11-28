@@ -6,6 +6,7 @@ import AventClient from './avent-client';
 import { readAventMessages } from './storage';
 
 const AVENT_COOKIE_NAME = 'avent_auth';
+const AVENT_DAY25_COOKIE_NAME = 'avent_25_unlocked';
 
 type AventRole = 'user1' | 'user2';
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 
 type PageProps = {
   params: Promise<{ locale: string }>;
-  searchParams?: Promise<{ error?: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
 async function authenticate(formData: FormData) {
@@ -81,13 +82,23 @@ export default async function AventPage({ params, searchParams }: PageProps) {
     rawRole === 'user1' || rawRole === 'user2' ? rawRole : undefined;
   const isAuthenticated = Boolean(role);
 
+  const day25Unlocked = cookieStore.get(AVENT_DAY25_COOKIE_NAME)?.value === '1';
+
   const messages = await readAventMessages();
   const todayISO = new Date().toISOString();
 
   let hasError = false;
   if (searchParams) {
     const resolvedSearchParams = await searchParams;
-    hasError = resolvedSearchParams?.error === '1';
+    const errorParam = resolvedSearchParams?.error;
+    hasError = Array.isArray(errorParam)
+      ? errorParam.includes('1')
+      : errorParam === '1';
+  }
+
+  const safeMessages = { ...messages };
+  if (!day25Unlocked) {
+    delete safeMessages[25];
   }
 
   if (!isAuthenticated || !role) {
@@ -144,9 +155,10 @@ export default async function AventPage({ params, searchParams }: PageProps) {
   return (
     <AventClient
       todayISO={todayISO}
-      messages={messages}
+      messages={safeMessages}
       locale={locale}
       role={role}
+      day25Unlocked={day25Unlocked}
     />
   );
 }
