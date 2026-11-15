@@ -18,7 +18,7 @@ const compat = new FlatCompat({
 
 export default defineConfig([
   {
-    ignores: ['node_modules/', '.next/', 'dist/', 'build/'],
+    ignores: ['node_modules/', '.next/', 'dist/', 'build/', 'next-env.d.ts'],
   },
   ...compat.extends(
     'plugin:prettier/recommended',
