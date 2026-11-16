@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import { getLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default async function RootLayout({ children }: Props) {
         className={`${inter.variable} ${nacelle.variable} bg-gray-950 font-inter text-base text-gray-200 antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
